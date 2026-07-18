@@ -180,29 +180,47 @@
         }
     </style>
 </head>
-<body class="bg-surface text-on-surface font-body-md antialiased md:hidden pb-24">
-<!-- Top Navigation (Mobile App Header) -->
-<header class="fixed top-0 left-0 w-full z-40 glass-nav border-b border-outline-variant/30 px-margin-mobile py-4 flex justify-between items-center">
-<h1 class="font-headline-sm text-headline-sm text-primary tracking-tight">Divine Heritage</h1>
-<button aria-label="Search Guides" class="text-on-surface-variant p-2 rounded-full hover:bg-surface-variant transition-colors">
-<span class="material-symbols-outlined text-[24px]" data-icon="search">search</span>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-24">
+<!-- TopNavBar (Mobile Header) -->
+<header class="fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-3 max-w-container-max md:hidden">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
+<div class="flex items-center gap-4">
+<button aria-label="Search Guides" class="text-primary dark:text-primary-fixed-dim hover:bg-primary-container/10 p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
 </button>
+</div>
 </header>
-<main class="pt-[88px] px-margin-mobile flex flex-col gap-8">
+<!-- TopNavBar (Desktop Header) -->
+<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-3 max-w-container-max transition-transform duration-300">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
+<nav class="flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="/Build/ayodhya_darshan_mobile_home/home.html">Heritage</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Darshan</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Luxury</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Spiritual</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed-dim hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
+</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:shadow-lg transition-shadow">Plan Your Visit</button>
+</div>
+</header>
+<main class="pt-[100px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col gap-8">
 <!-- Page Header -->
-<section class="mt-4">
-<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mb-2">Expert Guides</h2>
-<p class="text-on-surface-variant font-body-md text-body-md">Discover the deep spiritual history of Ayodhya with our curated selection of verified local experts.</p>
+<section class="mt-4 text-center">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:text-headline-md md:font-headline-md text-on-surface mb-2">Expert Guides</h2>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-xl mx-auto">Discover the deep spiritual history of Ayodhya with our curated selection of verified local experts.</p>
 </section>
 <!-- Filters (Horizontal Scroll) -->
-<div class="flex gap-3 overflow-x-auto pb-4 snap-x hide-scrollbar -mx-margin-mobile px-margin-mobile">
+<div class="flex gap-3 overflow-x-auto pb-4 snap-x hide-scrollbar -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 md:justify-center md:flex-wrap">
 <button class="snap-start flex-none px-5 py-2.5 rounded-full bg-primary text-on-primary font-label-caps text-label-caps shadow-sm">All Experts</button>
 <button class="snap-start flex-none px-5 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps border border-outline-variant/50">Heritage</button>
 <button class="snap-start flex-none px-5 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps border border-outline-variant/50">Sanskrit Scholars</button>
 <button class="snap-start flex-none px-5 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps border border-outline-variant/50">Luxury Hosts</button>
 </div>
 <!-- Guide List -->
-<section class="flex flex-col gap-6">
+<section class="flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
 <!-- Guide Card 1 -->
 <article class="bg-surface-container-lowest rounded-xl guide-card-shadow p-5 border-l-4 border-primary relative overflow-hidden">
 <div class="flex gap-4 items-start mb-4">
@@ -308,7 +326,7 @@
 </section>
 </main>
 <!-- Bottom Navigation Shell (JSON Driven) -->
-<nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe">
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 rounded-t-xl border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 flex justify-around items-center px-4 py-3 pb-safe">
 <button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors">
 <span class="material-symbols-outlined mb-1" data-icon="home">home</span>
 <span class="font-label-caps text-[10px]">Home</span>
