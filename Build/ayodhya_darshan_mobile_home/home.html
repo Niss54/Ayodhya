@@ -234,8 +234,11 @@
 <body class="bg-background text-on-background font-body-md overflow-x-hidden pb-[100px]">
 <!-- TopNavBar (Mobile Header - Hidden MD to allow bottom nav dominance, but requested as sticky header) -->
 <!-- Applying Shared Component JSON strictly for Mobile header styling but keeping requested functionality -->
-<header class="fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-3 max-w-container-max md:hidden">
-<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
+<header class="fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-2 max-w-container-max md:hidden">
+<div class="flex flex-col justify-center">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight leading-none">Ayodhya Mahakaal</div>
+<div class="font-label-caps text-[9px] uppercase tracking-widest text-on-surface-variant dark:text-surface-variant font-bold mt-1">Tours & Travels</div>
+</div>
 <div class="flex items-center gap-4">
 <button class="text-primary dark:text-primary-fixed-dim hover:bg-primary-container/10 p-2 rounded-full transition-colors flex items-center justify-center">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
@@ -243,8 +246,11 @@
 </div>
 </header>
 <!-- TopNavBar (Web - Hidden on Mobile) -->
-<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-3 max-w-container-max transition-transform duration-300">
-<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
+<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-2 max-w-container-max transition-transform duration-300">
+<div class="flex flex-col justify-center">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight leading-none">Ayodhya Mahakaal</div>
+<div class="font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant dark:text-surface-variant font-bold mt-1">Tours & Travels</div>
+</div>
 <nav class="flex gap-8">
 <a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim border-b-2 border-primary scale-95 duration-200" href="#">Heritage</a>
 <a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Darshan</a>
@@ -265,10 +271,13 @@
 <img class="hero-img-light w-full h-full object-cover opacity-65" src="/public/light%20herosection.png" alt="Ayodhya Ram Mandir in daylight - bright golden temple with serene sky"/>
 <img class="hero-img-dark w-full h-full object-cover opacity-65" src="/public/dark%20hero%20section.png" alt="Ayodhya Ram Mandir at night - illuminated temple with dramatic night sky"/>
 <!-- Gradient overlay for text readability -->
-<div class="absolute inset-0 bg-gradient-to-t from-background/70 via-background/35 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 dark:from-black/80 dark:via-black/40 to-transparent"></div>
 </div>
-<div class="relative z-10 flex flex-col items-center text-center gap-6 max-w-container-max mx-auto mt-auto mb-[20vh]">
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Your Divine Journey Begins. Experience spiritual luxury and seamless boutique pilgrimage in the sacred city.</p>
+<div class="relative z-10 flex flex-col items-start text-left gap-6 w-full max-w-container-max mx-auto mt-auto mb-[8vh] px-6 md:px-8">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface dark:text-white font-bold drop-shadow-xl max-w-3xl leading-tight">Journey to the Eternal City of Lord Ram</h1>
+<p class="font-body-lg md:text-[20px] text-on-surface-variant dark:text-surface-variant drop-shadow-lg max-w-2xl leading-relaxed">
+    Walk the sacred paths of devotion, explore centuries of heritage, and enjoy thoughtfully curated pilgrimages with premium hospitality. Let every visit become a cherished spiritual memory.
+</p>
 <button class="mt-4 bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps text-label-caps hover:shadow-[0_8px_20px_rgba(255,102,17,0.3)] transition-all shimmer-bg">Book Darshan</button>
 </div>
 <!-- Stats Row -->
