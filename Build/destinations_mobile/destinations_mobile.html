@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -123,12 +123,37 @@
     </style>
 </head>
 <body class="bg-background text-on-background min-h-screen pb-24 font-body-md text-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
-<!-- Mobile Header (Contextual Anchor) -->
-<header class="fixed top-0 left-0 w-full z-40 glass-panel border-b border-outline-variant/30 px-margin-mobile py-4 flex items-center justify-between">
-<h1 class="font-headline-sm text-headline-sm text-primary tracking-tight">Destinations</h1>
-<button aria-label="Search destinations" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+<!-- TopNavBar (Mobile Header - Hidden MD to allow bottom nav dominance, but requested as sticky header) -->
+<!-- Applying Shared Component JSON strictly for Mobile header styling but keeping requested functionality -->
+<header class="fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-2 max-w-container-max md:hidden">
+<div class="flex flex-col justify-center">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight leading-none">Ayodhya Mahakaal</div>
+<div class="font-label-caps text-[9px] uppercase tracking-widest text-on-surface-variant dark:text-surface-variant font-bold mt-1">Tours & Travels</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="lang-toggle-btn w-8 h-8 flex items-center justify-center rounded-full border border-primary/50 text-primary dark:text-inverse-primary hover:bg-primary/10 transition-colors" onclick="toggleLanguage()">
+<span class="font-bold text-[12px]">EN</span>
 </button>
+</div>
+</header>
+<!-- TopNavBar (Web - Hidden on Mobile) -->
+<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-2 max-w-container-max transition-transform duration-300">
+<div class="flex flex-col justify-center">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight leading-none">Ayodhya Mahakaal</div>
+<div class="font-label-caps text-[10px] uppercase tracking-widest text-on-surface-variant dark:text-surface-variant font-bold mt-1">Tours & Travels</div>
+</div>
+<nav class="flex gap-8">
+<a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim border-b-2 border-primary scale-95 duration-200" href="#">Heritage</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Darshan</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Luxury</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Spiritual</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="lang-toggle-btn w-8 h-8 flex items-center justify-center rounded-full border border-primary/50 text-primary dark:text-inverse-primary hover:bg-primary/10 transition-colors" onclick="toggleLanguage()">
+<span class="font-bold text-[12px]">EN</span>
+</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:shadow-lg transition-shadow shimmer-bg">Plan Your Visit</button>
+</div>
 </header>
 <!-- Main Content Canvas -->
 <main class="pt-[90px] px-margin-mobile pb-8 max-w-md mx-auto flex flex-col gap-8">
@@ -211,38 +236,37 @@
             <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
 </button>
 </main>
-<!-- BottomNavBar (Shared Component) -->
-<!-- ACTIVE STATE LOGIC: The primary intent is exploring destinations, closest match is "Tours" based on standard travel app patterns for sightseeing, though "Home" could also be argued if this is the main landing. Opting for "Tours" as it represents the active exploration of sites. -->
-<nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-xl bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] md:hidden">
-<div class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe">
-<!-- Inactive: Home -->
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
-<span class="material-symbols-outlined mb-1 text-[24px]">home</span>
+<!-- BottomNavBar (Mobile Shell - Strictly following JSON) -->
+<!-- The page intent is 'Home', so 'Home' tab is active -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe z-50 rounded-t-xl bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] md:hidden">
+<!-- Tab 1: Home (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim translate-y-[-2px] transition-transform hover:bg-primary-container/10 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
 <span class="font-label-caps text-[10px]">Home</span>
 </a>
-<!-- Active: Tours (Represents Destinations/Sightseeing) -->
-<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim translate-y-[-2px] transition-transform p-2 rounded-lg" href="#">
-<span class="material-symbols-outlined mb-1 text-[24px]" style="font-variation-settings: 'FILL' 1;">temple_hindu</span>
+<!-- Tab 2: Tours (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">temple_hindu</span>
 <span class="font-label-caps text-[10px]">Tours</span>
 </a>
-<!-- Inactive: Guides -->
+<!-- Tab 3: Guides (INACTIVE) -->
 <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
-<span class="material-symbols-outlined mb-1 text-[24px]">person_pin</span>
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person_pin</span>
 <span class="font-label-caps text-[10px]">Guides</span>
 </a>
-<!-- Inactive: Rooms -->
+<!-- Tab 4: Rooms (INACTIVE) -->
 <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
-<span class="material-symbols-outlined mb-1 text-[24px]">bed</span>
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">bed</span>
 <span class="font-label-caps text-[10px]">Rooms</span>
 </a>
-<!-- Inactive: Contact -->
+<!-- Tab 5: Contact (INACTIVE) -->
 <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
-<span class="material-symbols-outlined mb-1 text-[24px]">chat</span>
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">chat</span>
 <span class="font-label-caps text-[10px]">Contact</span>
 </a>
-</div>
 </nav>
 <!-- Decorative Top Gradient (Ambient Depth) -->
 <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-surface-variant/40 to-transparent pointer-events-none z-0"></div>
 <script src="/Build/navigation.js"></script>
+<script src="/Build/translations.js"></script>
 </body></html>

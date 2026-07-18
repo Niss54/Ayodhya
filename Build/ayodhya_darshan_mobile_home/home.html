@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
@@ -240,8 +240,8 @@
 <div class="font-label-caps text-[9px] uppercase tracking-widest text-on-surface-variant dark:text-surface-variant font-bold mt-1">Tours & Travels</div>
 </div>
 <div class="flex items-center gap-4">
-<button class="text-primary dark:text-primary-fixed-dim hover:bg-primary-container/10 p-2 rounded-full transition-colors flex items-center justify-center">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
+<button class="lang-toggle-btn w-8 h-8 flex items-center justify-center rounded-full border border-primary/50 text-primary dark:text-inverse-primary hover:bg-primary/10 transition-colors" onclick="toggleLanguage()">
+<span class="font-bold text-[12px]">EN</span>
 </button>
 </div>
 </header>
@@ -258,8 +258,8 @@
 <a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Spiritual</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="text-primary dark:text-primary-fixed-dim hover:text-primary transition-colors duration-300">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
+<button class="lang-toggle-btn w-8 h-8 flex items-center justify-center rounded-full border border-primary/50 text-primary dark:text-inverse-primary hover:bg-primary/10 transition-colors" onclick="toggleLanguage()">
+<span class="font-bold text-[12px]">EN</span>
 </button>
 <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:shadow-lg transition-shadow shimmer-bg">Plan Your Visit</button>
 </div>
@@ -317,7 +317,7 @@
 <h3 class="font-headline-sm text-headline-sm text-on-surface">Ram Mandir VIP</h3>
 <p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Exclusive priority darshan with a dedicated heritage scholar.</p>
 <div class="mt-auto w-full pt-4 flex justify-center items-center gap-4 border-t border-outline-variant/20">
-<span class="font-headline-sm text-headline-sm text-primary font-bold">₹ 5,000</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">â‚¹ 5,000</span>
 <button class="text-primary hover:bg-primary-container/10 p-2 rounded-full transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
 </div>
 </div>
@@ -331,7 +331,7 @@
 <h3 class="font-headline-sm text-headline-sm text-on-surface">Saryu Aarti</h3>
 <p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Reserved seating for the divine evening Aarti at Ram ki Paidi.</p>
 <div class="mt-auto w-full pt-4 flex justify-center items-center gap-4 border-t border-outline-variant/20">
-<span class="font-headline-sm text-headline-sm text-primary font-bold">₹ 1,200</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">â‚¹ 1,200</span>
 <button class="text-primary hover:bg-primary-container/10 p-2 rounded-full transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
 </div>
 </div>
@@ -345,7 +345,7 @@
 <h3 class="font-headline-sm text-headline-sm text-on-surface">Heritage Walk</h3>
 <p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Guided exploration of ancient temples and hidden spiritual gems.</p>
 <div class="mt-auto w-full pt-4 flex justify-center items-center gap-4 border-t border-outline-variant/20">
-<span class="font-headline-sm text-headline-sm text-primary font-bold">₹ 800</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">â‚¹ 800</span>
 <button class="text-primary hover:bg-primary-container/10 p-2 rounded-full transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
 </div>
 </div>
@@ -405,4 +405,5 @@
         });
     </script>
 <script src="/Build/navigation.js"></script>
+<script src="/Build/translations.js"></script>
 </body></html>

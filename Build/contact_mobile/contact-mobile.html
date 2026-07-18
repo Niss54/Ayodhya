@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -262,8 +262,11 @@
 </nav>
 <!-- Top Navigation Shell (Desktop Only) -->
 <!-- Hiding on mobile, showing on desktop. Context: Contact isn't a main top nav item in JSON, but we render the shell -->
-<nav class="hidden md:flex bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-3 max-w-container-max mx-auto">
-<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
+<nav class="hidden md:flex bg-white/20 backdrop-blur-xl dark:bg-black/20 fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-3 max-w-container-max mx-auto">
+<div class="flex flex-col justify-center">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight leading-none">Ayodhya Mahakaal</div>
+<div class="font-label-caps text-[9px] uppercase tracking-widest text-on-surface-variant dark:text-surface-variant font-bold mt-1">Tours & Travels</div>
+</div>
 <div class="flex items-center gap-8">
 <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Heritage</a>
 <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Darshan</a>
@@ -271,11 +274,12 @@
 <a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Spiritual</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300">
-<span class="material-symbols-outlined">language</span>
+<button class="lang-toggle-btn w-8 h-8 flex items-center justify-center rounded-full border border-primary/50 text-primary dark:text-inverse-primary hover:bg-primary/10 transition-colors" onclick="toggleLanguage()">
+<span class="font-bold text-[12px]">EN</span>
 </button>
 <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:shadow-lg transition-shadow">Plan Your Visit</button>
 </div>
 </nav>
 <script src="/Build/navigation.js"></script>
+<script src="/Build/translations.js"></script>
 </body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -182,17 +182,26 @@
 </head>
 <body class="bg-surface text-on-surface font-body-md antialiased pb-24">
 <!-- TopNavBar (Mobile Header) -->
-<header class="fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-3 max-w-container-max md:hidden">
-<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
+<header class="fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-3 max-w-container-max md:hidden">
+<div class="flex flex-col justify-center">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight leading-none">Ayodhya Mahakaal</div>
+<div class="font-label-caps text-[9px] uppercase tracking-widest text-on-surface-variant dark:text-surface-variant font-bold mt-1">Tours & Travels</div>
+</div>
 <div class="flex items-center gap-4">
 <button aria-label="Search Guides" class="text-primary dark:text-primary-fixed-dim hover:bg-primary-container/10 p-2 rounded-full transition-colors flex items-center justify-center">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
 </button>
+<button class="lang-toggle-btn w-8 h-8 flex items-center justify-center rounded-full border border-primary/50 text-primary dark:text-inverse-primary hover:bg-primary/10 transition-colors ml-2" onclick="toggleLanguage()">
+<span class="font-bold text-[12px]">EN</span>
+</button>
 </div>
 </header>
 <!-- TopNavBar (Desktop Header) -->
-<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-3 max-w-container-max transition-transform duration-300">
-<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
+<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-3 max-w-container-max transition-transform duration-300">
+<div class="flex flex-col justify-center">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight leading-none">Ayodhya Mahakaal</div>
+<div class="font-label-caps text-[9px] uppercase tracking-widest text-on-surface-variant dark:text-surface-variant font-bold mt-1">Tours & Travels</div>
+</div>
 <nav class="flex gap-8">
 <a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="/Build/ayodhya_darshan_mobile_home/home.html">Heritage</a>
 <a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Darshan</a>
@@ -200,8 +209,8 @@
 <a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Spiritual</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="text-primary dark:text-primary-fixed-dim hover:text-primary transition-colors duration-300">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
+<button class="lang-toggle-btn w-8 h-8 flex items-center justify-center rounded-full border border-primary/50 text-primary dark:text-inverse-primary hover:bg-primary/10 transition-colors" onclick="toggleLanguage()">
+<span class="font-bold text-[12px]">EN</span>
 </button>
 <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:shadow-lg transition-shadow">Plan Your Visit</button>
 </div>
@@ -247,7 +256,7 @@
 <div class="flex justify-between items-center border-t border-outline-variant/30 pt-4">
 <div>
 <span class="text-[12px] text-on-surface-variant">Starting from</span>
-<div class="font-headline-sm text-[18px] text-on-surface">₹2,500<span class="text-[14px] font-body-md text-on-surface-variant">/half-day</span></div>
+<div class="font-headline-sm text-[18px] text-on-surface">â‚¹2,500<span class="text-[14px] font-body-md text-on-surface-variant">/half-day</span></div>
 </div>
 <button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-caps text-label-caps btn-hover-effect flex items-center gap-2">
                         Hire Guide
@@ -281,7 +290,7 @@
 <div class="flex justify-between items-center border-t border-outline-variant/30 pt-4">
 <div>
 <span class="text-[12px] text-on-surface-variant">Starting from</span>
-<div class="font-headline-sm text-[18px] text-on-surface">₹4,000<span class="text-[14px] font-body-md text-on-surface-variant">/half-day</span></div>
+<div class="font-headline-sm text-[18px] text-on-surface">â‚¹4,000<span class="text-[14px] font-body-md text-on-surface-variant">/half-day</span></div>
 </div>
 <button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-caps text-label-caps btn-hover-effect flex items-center gap-2">
                         Hire Guide
@@ -315,7 +324,7 @@
 <div class="flex justify-between items-center border-t border-outline-variant/30 pt-4">
 <div>
 <span class="text-[12px] text-on-surface-variant">Starting from</span>
-<div class="font-headline-sm text-[18px] text-on-surface">₹2,000<span class="text-[14px] font-body-md text-on-surface-variant">/half-day</span></div>
+<div class="font-headline-sm text-[18px] text-on-surface">â‚¹2,000<span class="text-[14px] font-body-md text-on-surface-variant">/half-day</span></div>
 </div>
 <button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-caps text-label-caps btn-hover-effect flex items-center gap-2">
                         Hire Guide
@@ -350,4 +359,5 @@
 </button>
 </nav>
 <script src="/Build/navigation.js"></script>
+<script src="/Build/translations.js"></script>
 </body></html>
