@@ -13,6 +13,8 @@
     luxury: '/Build/hotels_rooms_mobile/hotels_rooms_mobile.html',
     spiritual: '/Build/tour_guides_mobile/tour_guides_mobile.html',
     guides: '/Build/tour_guides_mobile/tour_guides_mobile.html',
+    tourguides: '/Build/tour_guides_mobile/tour_guides_mobile.html',
+    'tour guides': '/Build/tour_guides_mobile/tour_guides_mobile.html',
     guide: '/Build/tour_guides_mobile/tour_guides_mobile.html',
     vehicles: '/Build/car_rental_mobile/carrental.html',
     transport: '/Build/car_rental_mobile/carrental.html',
