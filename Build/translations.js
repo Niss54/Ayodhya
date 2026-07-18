@@ -2,6 +2,7 @@ const dictionary = {
     // Navbar
     "Ayodhya Mahakaal": "अयोध्या महाकाल",
     "Tours & Travels": "टूर्स एंड ट्रैवल्स",
+    "Destinations": "गंतव्य",
     "Heritage": "विरासत",
     "Darshan": "दर्शन",
     "Luxury": "लक्जरी",
