@@ -212,12 +212,29 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Hero image light/dark mode */
+        .hero-img-light { display: block; }
+        .hero-img-dark { display: none; }
+        .dark .hero-img-light { display: none; }
+        .dark .hero-img-dark { display: block; }
     </style>
+<!-- Dark mode detection: applies 'dark' class based on system preference -->
+<script>
+    (function() {
+        const mq = window.matchMedia('(prefers-color-scheme: dark)');
+        function applyTheme(e) {
+            document.documentElement.classList.toggle('dark', e.matches);
+        }
+        applyTheme(mq);
+        mq.addEventListener('change', applyTheme);
+    })();
+</script>
 </head>
-<body class="bg-background text-on-background font-body-md overflow-x-hidden pt-[80px] pb-[100px]">
+<body class="bg-background text-on-background font-body-md overflow-x-hidden pb-[100px]">
 <!-- TopNavBar (Mobile Header - Hidden MD to allow bottom nav dominance, but requested as sticky header) -->
 <!-- Applying Shared Component JSON strictly for Mobile header styling but keeping requested functionality -->
-<header class="fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-3 max-w-container-max md:hidden">
+<header class="fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-3 max-w-container-max md:hidden">
 <div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
 <div class="flex items-center gap-4">
 <button class="text-primary dark:text-primary-fixed-dim hover:bg-primary-container/10 p-2 rounded-full transition-colors flex items-center justify-center">
@@ -226,7 +243,7 @@
 </div>
 </header>
 <!-- TopNavBar (Web - Hidden on Mobile) -->
-<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-3 max-w-container-max transition-transform duration-300">
+<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-3 max-w-container-max transition-transform duration-300">
 <div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
 <nav class="flex gap-8">
 <a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim border-b-2 border-primary scale-95 duration-200" href="#">Heritage</a>
@@ -243,9 +260,10 @@
 </header>
 <main class="w-full">
 <!-- Hero Section -->
-<section class="relative w-full min-h-[80vh] flex flex-col items-center justify-center px-margin-mobile pt-12 overflow-hidden fade-up">
+<section class="relative w-full min-h-[100vh] flex flex-col items-center justify-center px-margin-mobile pt-32 overflow-hidden fade-up">
 <div class="absolute inset-0 z-0">
-<div class="bg-cover bg-center w-full h-full opacity-65" data-alt="A breathtaking, cinematic shot of the Ram Mandir in Ayodhya at dawn. The temple is bathed in soft, golden morning light, contrasting beautifully with a serene, minimalist sky. The architecture is detailed and majestic, radiating a sense of profound spiritual luxury. High-contrast saffron and gold hues dominate the scene, creating a peaceful yet powerful atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZt4KMPE0EUZh9OexcuLeLIvG1BZux346HjLBTWoce7lT4PIYLzg9JLESDbI0ylOmckocFq01L3nAYkk3_9BXht_uWfs34nbnCw02bkMM6eaISaXAqJTQndokoEp5aLAXNfzMhhupBOVEeg2Cmwg4DkJnv3BGp0owvuTyPygc_3Vi6hf6RVg9QSM42laVgnZbU6R49QVxeMSAXhlcWouRp5Oty8CgeNOMM1mbex6c-LMDXbgS_R9iN')"></div>
+<img class="hero-img-light w-full h-full object-cover opacity-65" src="/public/light%20herosection.png" alt="Ayodhya Ram Mandir in daylight - bright golden temple with serene sky"/>
+<img class="hero-img-dark w-full h-full object-cover opacity-65" src="/public/dark%20hero%20section.png" alt="Ayodhya Ram Mandir at night - illuminated temple with dramatic night sky"/>
 <!-- Gradient overlay for text readability -->
 <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-background/35 to-transparent"></div>
 </div>
