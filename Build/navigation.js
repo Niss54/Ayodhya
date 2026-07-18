@@ -33,7 +33,8 @@
   style.textContent = `
     html[data-theme="dark"] { color-scheme: dark; }
     html[data-theme="dark"] body { background: #18120e !important; color: #f8eee5 !important; }
-    html[data-theme="dark"] .bg-background, html[data-theme="dark"] .bg-surface, html[data-theme="dark"] .bg-surface\/90, html[data-theme="dark"] .bg-surface\/80 { background-color: #211914 !important; }
+    html[data-theme="dark"] .bg-background, html[data-theme="dark"] .bg-surface, html[data-theme="dark"] .bg-surface\\/90, html[data-theme="dark"] .bg-surface\\/80 { background-color: #211914 !important; }
+    html[data-theme="dark"] .bg-surface-container-lowest, html[data-theme="dark"] .bg-surface-container-low, html[data-theme="dark"] .bg-surface-container, html[data-theme="dark"] .bg-surface-container-high, html[data-theme="dark"] .bg-surface-container-highest, html[data-theme="dark"] .bg-white { background-color: #2a1f18 !important; }
     html[data-theme="dark"] .text-on-surface, html[data-theme="dark"] .text-on-background { color: #f8eee5 !important; }
     html[data-theme="dark"] .text-on-surface-variant { color: #d9c9bc !important; }
     .site-controls { display: inline-flex; align-items: center; gap: 6px; margin-left: 12px; }
@@ -83,9 +84,8 @@
   const createControls = () => {
     const controls = document.createElement('div');
     controls.className = 'site-controls';
-    controls.innerHTML = '<button class="site-theme-toggle" type="button" aria-label="Switch to dark mode">\u263e</button><select class="site-language-select" aria-label="Choose language"><option value="en">EN</option><option value="hi">&#2361;&#2367;&#2306;</option></select>';
+    controls.innerHTML = '<button class="site-theme-toggle" type="button" aria-label="Switch to dark mode">\u263e</button>';
     controls.querySelector('.site-theme-toggle').addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
-    controls.querySelector('.site-language-select').addEventListener('change', (event) => applyLanguage(event.target.value));
     return controls;
   };
 
