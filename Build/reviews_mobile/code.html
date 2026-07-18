@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reviews - Divine Heritage Ayodhya</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#715300",
+                        "surface-tint": "#a53d00",
+                        "on-tertiary-container": "#5e1213",
+                        "tertiary-container": "#e37772",
+                        "on-tertiary-fixed-variant": "#7e2a29",
+                        "on-primary-fixed-variant": "#7e2c00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#f6be39",
+                        "on-surface": "#1d1c17",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#9d413e",
+                        "secondary-fixed": "#ffdfa0",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f8f3eb",
+                        "surface-container-highest": "#e7e2da",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#ece8e0",
+                        "on-primary-fixed": "#360f00",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fef9f1",
+                        "on-surface-variant": "#5a4137",
+                        "primary-fixed-dim": "#ffb597",
+                        "inverse-on-surface": "#f5f0e8",
+                        "primary": "#a53d00",
+                        "inverse-surface": "#32302b",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#ffc641",
+                        "background": "#fef9f1",
+                        "primary-fixed": "#ffdbcd",
+                        "surface-variant": "#e7e2da",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "surface-dim": "#ded9d2",
+                        "on-background": "#1d1c17",
+                        "surface-container": "#f2ede5",
+                        "surface": "#fef9f1",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-tertiary-fixed": "#410004",
+                        "outline-variant": "#e3bfb1",
+                        "secondary": "#795900",
+                        "primary-container": "#ff6611",
+                        "inverse-primary": "#ffb597",
+                        "outline": "#8e7165",
+                        "on-primary-container": "#571c00",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#5c4300"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Libre Caslon Text"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel { background: rgba(254, 249, 241, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(227, 191, 177, 0.3); }
+        .ambient-shadow { box-shadow: 0 8px 32px rgba(255, 102, 17, 0.08); }
+        
+        /* Mobile Masonry Approximation using columns */
+        .masonry-grid {
+            column-count: 1;
+            column-gap: theme('spacing.margin-mobile');
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+                column-gap: theme('spacing.gutter');
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: theme('spacing.margin-mobile');
+        }
+        @media (min-width: 768px) {
+             .masonry-item { margin-bottom: theme('spacing.gutter'); }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col relative pb-24 md:pb-0">
+<!-- Top Navigation (Desktop Only) -->
+<nav class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)]">
+<div class="flex justify-between items-center px-8 py-3 max-w-container-max mx-auto w-full">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">
+                Divine Heritage
+            </div>
+<div class="flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Heritage</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Darshan</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Luxury</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim border-b-2 border-primary scale-95 duration-200" href="#">Spiritual</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="language">language</span>
+<button class="bg-primary-container text-on-primary-container font-label-caps text-label-caps px-6 py-2 rounded-full hover:shadow-[0_4px_12px_rgba(255,102,17,0.2)] transition-shadow">Plan Your Visit</button>
+</div>
+</div>
+</nav>
+<!-- Mobile Header (Minimalist Back) -->
+<header class="md:hidden sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-outline-variant/20 px-margin-mobile py-4 flex items-center justify-between">
+<button class="text-on-surface flex items-center justify-center p-2 rounded-full hover:bg-surface-variant/50 transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Reviews</h1>
+<div class="w-10"></div> <!-- Spacer -->
+</header>
+<main class="flex-grow pt-6 md:pt-[120px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header & Aggregate Score Section -->
+<section class="mb-12 flex flex-col md:flex-row gap-8 items-start md:items-center">
+<div class="flex-1">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">Pilgrim Voices</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Discover authentic experiences from those who have walked the sacred paths of Ayodhya with Divine Heritage.</p>
+</div>
+<div class="glass-panel ambient-shadow rounded-xl p-6 flex flex-col md:flex-row gap-6 items-center md:min-w-[400px]">
+<div class="text-center md:text-left flex flex-col items-center md:items-start border-b md:border-b-0 md:border-r border-outline-variant/30 pb-4 md:pb-0 md:pr-6">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary block leading-none mb-1">4.9</span>
+<div class="flex text-secondary-container mb-2">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star_half" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Based on 1,248 reviews</span>
+</div>
+<div class="flex-1 w-full space-y-2">
+<!-- Progress bars -->
+<div class="flex items-center gap-2 text-sm">
+<span class="w-2 font-medium text-on-surface">5</span>
+<div class="flex-1 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="w-2 font-medium text-on-surface">4</span>
+<div class="flex-1 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 10%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="w-2 font-medium text-on-surface">3</span>
+<div class="flex-1 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 1.5%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-sm opacity-50">
+<span class="w-2 font-medium text-on-surface">2</span>
+<div class="flex-1 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 0.5%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-sm opacity-50">
+<span class="w-2 font-medium text-on-surface">1</span>
+<div class="flex-1 h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 0%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters (Minimalist) -->
+<div class="flex overflow-x-auto pb-4 mb-8 gap-3 no-scrollbar border-b border-outline-variant/20">
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full bg-primary text-on-primary whitespace-nowrap">All Reviews</button>
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors whitespace-nowrap">Luxury Suites</button>
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors whitespace-nowrap">Guided Darshan</button>
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors whitespace-nowrap">With Photos</button>
+</div>
+<!-- Masonry Grid -->
+<section class="masonry-grid pb-section-gap">
+<!-- Review Card 1 (Longer text) -->
+<div class="masonry-item bg-surface-container-lowest rounded-xl p-6 ambient-shadow border-l-4 border-l-primary relative">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close up portrait of an elegant Indian woman in her 40s with a serene smile, soft studio lighting, wearing a subtle maroon sari, representing a high-end luxury pilgrim in a modern minimalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_GzzvlnM2xBX_ywPkwj9D7IuqS-58sFi41GYliCYGJ89W-ei0AGNYa9R8X6UWT8DqFB8j-3DyrP1VBW1oVnsdjDJqcgDqRkk6lGiOXBW84Q_aD1_W0Qs0uDsSVles2-qL5daeL0N5pMP4ImJrBYtRZHVk6fo28UAzXOpBxwWvx6FLMXJlgoubLk0P2-hWi9uYmYp6vSg9Uj4dC10eTWrpRA9pZFRfXOvdkKA__DWzi-IJXbaeHxWc"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-[16px] text-on-surface leading-tight">Aditi S.</h4>
+<span class="font-label-caps text-label-caps text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span> Verified Pilgrim
+                            </span>
+</div>
+</div>
+<div class="flex text-secondary-container text-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<h5 class="font-headline-sm text-[18px] mb-2 text-on-surface">A profoundly moving experience</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">The seamless blend of devotion and luxury provided by Divine Heritage was beyond expectations. Our private guide at the Ram Janmabhoomi was incredibly knowledgeable, ensuring we bypassed the crowds while maintaining the sanctity of the visit. The evening Aarti view from our suite was simply divine.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 font-label-caps text-[10px] text-outline">
+                    Guided VIP Darshan Ã‚Â· Oct 2023
+                </div>
+</div>
+<!-- Review Card 2 (With Image) -->
+<div class="masonry-item bg-surface-container-lowest rounded-xl p-6 ambient-shadow border-l-4 border-l-primary relative">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant font-headline-sm">
+                            R
+                        </div>
+<div>
+<h4 class="font-headline-sm text-[16px] text-on-surface leading-tight">Rajiv M.</h4>
+<span class="font-label-caps text-label-caps text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span> Verified Pilgrim
+                            </span>
+</div>
+</div>
+<div class="flex text-secondary-container text-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<h5 class="font-headline-sm text-[18px] mb-2 text-on-surface">Impeccable Hospitality</h5>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Every detail was curated to perfection. Returning to the tranquility of the property after a day of intense spiritual exploration was exactly what we needed.</p>
+<div class="w-full h-32 rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A wide angle photograph of a luxurious, minimalist hotel room interior with soft glowing ambient light, a large window overlooking a serene courtyard, saffron colored silk cushions on a pristine white bed, evoking modern Indian luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzCKLR4Xhs9yCvqczgLi-3kYsBjbQExkaYz9wlva2VYIxSIZnfXdEhUfjbodPhPVX-hzbsMGxI3ZUGozdA_-kGfIxXjidAyJxuSK6oR_3SY7s6RGpvehZJ6W6j09kcL2Ju1-zeC3oHbEfXxgQrnM6J5nBLhUq8H8OX81eEfC4aGThvqNkJJkouEcjgGuYJzoxsmnQub_uk97s4JiHsp_ZSGylTzMURm797xlldoa8tHoScuIJxv18U"/>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 font-label-caps text-[10px] text-outline">
+                    Heritage Suite Stay Ã‚Â· Nov 2023
+                </div>
+</div>
+<!-- Review Card 3 -->
+<div class="masonry-item bg-surface-container-lowest rounded-xl p-6 ambient-shadow border-l-4 border-l-primary relative">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of an older Indian gentleman with white hair, wearing a crisp light linen shirt, photographed in soft, high-key natural light against a blurred background, conveying a sense of wisdom and peace in a luxury context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUdQbuRytX6Hxy17PKaskGlu88lVLoc6893wHXHQnXPfJ19pHOT0_q63IgM0HN9gOluFGejrZB_CdJuu4_1a4AUdOqSpyqyAFPcIEZd0nWu8BzUOpmqGbYYuWGiSEY1l22Mi3s5mQAwUXl5S-ktkESHrWNp84gqMO4Kvl7M9DNR2L1X4cvheZtM0WMQu5_vfr52gJseAxV5TKO4w8AkDGeW5OSLSmsYWhG_5gzQdaN1imOsdRAnrcB"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-[16px] text-on-surface leading-tight">Dr. Sharma</h4>
+<span class="font-label-caps text-label-caps text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span> Verified Pilgrim
+                            </span>
+</div>
+</div>
+<div class="flex text-secondary-container text-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star_half" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+</div>
+<h5 class="font-headline-sm text-[18px] mb-2 text-on-surface">A serene sanctuary</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">The concierge anticipated our needs before we even articulated them. The dietary requirements for our elderly parents were handled with utmost grace.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 font-label-caps text-[10px] text-outline">
+                    Family Pilgrimage Package Ã‚Â· Sep 2023
+                </div>
+</div>
+<!-- Review Card 4 -->
+<div class="masonry-item bg-surface-container-lowest rounded-xl p-6 ambient-shadow border-l-4 border-l-primary relative">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant font-headline-sm">
+                            K
+                        </div>
+<div>
+<h4 class="font-headline-sm text-[16px] text-on-surface leading-tight">Kavita P.</h4>
+<span class="font-label-caps text-label-caps text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span> Verified Pilgrim
+                            </span>
+</div>
+</div>
+<div class="flex text-secondary-container text-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Exceptional service. The sunset boat ride on the Sarayu river arranged by the hotel was the highlight of our trip.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 font-label-caps text-[10px] text-outline">
+                    Bespoke Experience Ã‚Â· Dec 2023
+                </div>
+</div>
+<!-- Load More -->
+<div class="col-span-1 md:col-span-2 flex justify-center mt-8">
+<button class="border border-outline text-on-surface font-label-caps text-label-caps px-8 py-3 rounded-full hover:bg-surface-variant transition-colors">Load More Voices</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 rounded-t-xl bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="temple_hindu">temple_hindu</span>
+<span class="font-label-caps text-[10px]">Tours</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person_pin">person_pin</span>
+<span class="font-label-caps text-[10px]">Guides</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim translate-y-[-2px] transition-transform p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="bed" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bed</span>
+<span class="font-label-caps text-[10px]">Rooms</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat">chat</span>
+<span class="font-label-caps text-[10px]">Contact</span>
+</a>
+</div>
+</nav>
+<script src="/Build/navigation.js"></script>
+</body></html>

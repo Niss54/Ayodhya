@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Divine Packages - Ayodhya Darshan</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#715300",
+                        "surface-tint": "#a53d00",
+                        "on-tertiary-container": "#5e1213",
+                        "tertiary-container": "#e37772",
+                        "on-tertiary-fixed-variant": "#7e2a29",
+                        "on-primary-fixed-variant": "#7e2c00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#f6be39",
+                        "on-surface": "#1d1c17",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#9d413e",
+                        "secondary-fixed": "#ffdfa0",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f8f3eb",
+                        "surface-container-highest": "#e7e2da",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#ece8e0",
+                        "on-primary-fixed": "#360f00",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fef9f1",
+                        "on-surface-variant": "#5a4137",
+                        "primary-fixed-dim": "#ffb597",
+                        "inverse-on-surface": "#f5f0e8",
+                        "primary": "#a53d00",
+                        "inverse-surface": "#32302b",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#ffc641",
+                        "background": "#fef9f1",
+                        "primary-fixed": "#ffdbcd",
+                        "surface-variant": "#e7e2da",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "surface-dim": "#ded9d2",
+                        "on-background": "#1d1c17",
+                        "surface-container": "#f2ede5",
+                        "surface": "#fef9f1",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-tertiary-fixed": "#410004",
+                        "outline-variant": "#e3bfb1",
+                        "secondary": "#795900",
+                        "primary-container": "#ff6611",
+                        "inverse-primary": "#ffb597",
+                        "outline": "#8e7165",
+                        "on-primary-container": "#571c00",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#5c4300"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "safe": "env(safe-area-inset-bottom)"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Libre Caslon Text", "serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "display-lg-mobile": ["Libre Caslon Text", "serif"],
+                        "display-lg": ["Libre Caslon Text", "serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "headline-md": ["Libre Caslon Text", "serif"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Hide scrollbar for horizontal scroll areas but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-32 md:pb-0">
+<!-- DESKTOP TOP APP BAR (Hidden on Mobile) -->
+<nav class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-3 max-w-container-max">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
+<div class="flex items-center gap-6 font-label-caps text-label-caps">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Heritage</a>
+<!-- Active State on Desktop inferred to be 'Darshan' for this page -->
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary hover:text-primary transition-colors duration-300 scale-95 duration-200" href="#">Darshan</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Luxury</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300" href="#">Spiritual</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed-dim hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2.5 rounded-full hover:shadow-[0_4px_12px_rgba(165,61,0,0.3)] transition-all duration-300">Plan Your Visit</button>
+</div>
+</nav>
+<!-- MOBILE HEADER (Canvas Start) -->
+<header class="pt-12 md:pt-40 pb-6 px-margin-mobile md:px-margin-desktop md:max-w-container-max md:mx-auto">
+<h1 class="font-headline-md text-headline-md text-primary">Divine Packages</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">Curated spiritual journeys offering exclusive access, luxury transport, and deeply knowledgeable local guides.</p>
+</header>
+<!-- FILTER CHIPS -->
+<section class="px-margin-mobile md:px-margin-desktop md:max-w-container-max md:mx-auto pb-8 overflow-x-auto whitespace-nowrap hide-scrollbar flex gap-3">
+<button class="bg-tertiary text-secondary-container font-label-caps text-label-caps px-6 py-2.5 rounded-full shadow-sm transition-all duration-300">All</button>
+<button class="bg-surface-container text-on-surface-variant font-label-caps text-label-caps px-6 py-2.5 rounded-full hover:bg-surface-container-highest transition-all duration-300">Pilgrimage</button>
+<button class="bg-surface-container text-on-surface-variant font-label-caps text-label-caps px-6 py-2.5 rounded-full hover:bg-surface-container-highest transition-all duration-300">Heritage</button>
+<button class="bg-surface-container text-on-surface-variant font-label-caps text-label-caps px-6 py-2.5 rounded-full hover:bg-surface-container-highest transition-all duration-300">Saryu</button>
+<button class="bg-surface-container text-on-surface-variant font-label-caps text-label-caps px-6 py-2.5 rounded-full hover:bg-surface-container-highest transition-all duration-300">Full Day</button>
+</section>
+<!-- TOUR PACKAGES LIST -->
+<main class="px-margin-mobile md:px-margin-desktop md:max-w-container-max md:mx-auto flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-gutter pb-section-gap">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(255,102,17,0.08)] border-l-[4px] border-primary relative flex flex-col group hover:shadow-[0_12px_48px_rgba(255,102,17,0.12)] transition-shadow duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A breathtaking view of the grand Ram Mandir in Ayodhya at dawn. Soft, golden light bathes the intricate sandstone carvings. The atmosphere is serene and spiritually uplifting, embodying devotional luxury and modern minimalisms with high-end architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN6Pk73i8gKcWXByeLudLicXSsjZtZ9Akhush4oeCJ9_MsBXyUhJwrDejlJmcYCX_MFQPs_M8diab30LaxouBMdJRvEmfL2wlXjnBkSK4y_Tlx1g3eunrVuMNrWZ-m54GWSmtZGh9GLjCwnmTXsOf3RILsLIb9h75hzJxlPG-5zrDRu3lJFLCC2QhoNPvdEJU1rWA41tmLX_B8ExmX8aT38DsFjwUCa-7kb9Cr-aoJRhrArSdPDFbl"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps px-3 py-1.5 rounded-full backdrop-blur-md bg-opacity-95 shadow-md">
+                    Ã¢â€šÂ¹4,500
+                </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">Sacred Ram Janmabhoomi VIP</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Exclusive fast-track darshan access with a dedicated heritage scholar guiding you through the sacred precincts.</p>
+</div>
+<div>
+<div class="flex gap-6 mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
+                            4 Hours
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">group</span>
+                            2-4 Pax
+                        </div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-3.5 rounded-lg hover:bg-surface-tint hover:shadow-[0_4px_12px_rgba(165,61,0,0.3)] transition-all duration-300">Book Now</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(255,102,17,0.08)] border-l-[4px] border-primary relative flex flex-col group hover:shadow-[0_12px_48px_rgba(255,102,17,0.12)] transition-shadow duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A magical evening scene at the Saryu River ghats during the Maha Aarti. Thousands of glowing oil lamps float on the water reflecting warm amber light. The composition is highly aesthetic, focusing on the spiritual devotion and luxury of a private viewing experience. Minimalist contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWRfLlnNa7_Vou1oK0U-V7yRg3yR9BnJe6EKRw5v-t4eaZkd9AOuwbEpaAxWOuxfYqaVjXcaPqlZYROxLEH-fDDshsESjSf_sb-rbte0fnRIozbAPUrG4UWgvWz5M-yuiFEAUI9nnc3yk7xWkwIvdhV0vAHTYfvuGt0yw0Ft-Zzb6E7IFloNLm3wWj0oXwd-8SDHg8Us0zHHyYzCmaQ4sJ8o7QyHi-av--S0FbGCYPs_pPemlWCCBw"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps px-3 py-1.5 rounded-full backdrop-blur-md bg-opacity-95 shadow-md">
+                    Ã¢â€šÂ¹3,200
+                </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">Saryu Evening Aarti Experience</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A private boat ride at dusk followed by front-row seating for the mesmerizing Maha Aarti ceremony.</p>
+</div>
+<div>
+<div class="flex gap-6 mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
+                            3 Hours
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">group</span>
+                            2-6 Pax
+                        </div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-3.5 rounded-lg hover:bg-surface-tint hover:shadow-[0_4px_12px_rgba(165,61,0,0.3)] transition-all duration-300">Book Now</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(255,102,17,0.08)] border-l-[4px] border-primary relative flex flex-col group hover:shadow-[0_12px_48px_rgba(255,102,17,0.12)] transition-shadow duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A stylized, high-contrast photograph of Hanuman Garhi temple steps. The ancient stone architecture is bathed in pristine daylight, contrasting with vibrant saffron flags. The image exudes a sense of premium spiritual journey and clean, modern Indian minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDITBmZDFuZ5rVM3XdSwYsUmMbMmU2aWrqE-r5HjJkI35HONl0QVSIu3vZ0neU-hEBwhR6P7kSg9REPjlRNTs5mfCVy3MvRGKSqYvRLqDxCwrUhKBklLQaolXFeBgXpscgKGTQKR7gZKDpmLSmmslTTFF5xvFVHdnS9CPzZrJuUk3n_t3Bxc6Hy_qjRSgEvpqzq_XUoAdA43uMBtABA6Rt23NwjcQk4R7UBDeoLdOLAM8wLGae3kakU"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps px-3 py-1.5 rounded-full backdrop-blur-md bg-opacity-95 shadow-md">
+                    Ã¢â€šÂ¹2,800
+                </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">Hanuman Garhi &amp; Kanak Bhawan</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Explore the historical richness of Ayodhya's most revered secondary shrines with a dedicated narrator.</p>
+</div>
+<div>
+<div class="flex gap-6 mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
+                            3.5 Hours
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">group</span>
+                            1-4 Pax
+                        </div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-3.5 rounded-lg hover:bg-surface-tint hover:shadow-[0_4px_12px_rgba(165,61,0,0.3)] transition-all duration-300">Book Now</button>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(255,102,17,0.08)] border-l-[4px] border-primary relative flex flex-col group hover:shadow-[0_12px_48px_rgba(255,102,17,0.12)] transition-shadow duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="An elegant shot of a luxury chauffeur-driven vintage car parked near an ancient Ayodhya heritage site. The scene blends classic opulence with spiritual heritage. Bright, clean lighting highlights the cream and gold tones, reflecting a high-end luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj7AunXUzVkx0BYsCICB1MDCftwgnddz2UITy8zZlgraPGCaf_oeJIXJTAqdLZgFZ4mNscus4GftQoKu8phS-8J0asV_pM2kZEClGNPnbTjykzgjzGZgIYd3HLg8bIBrVEo7Wy0sT3IOQ8txxmIBXrtQ_O4mYEIFugkLh3y5rJKfSyalsdDqqoo1mVlXa6oS4CBA3pi4M1Sr3sNObjMwUNDbT4gFUAR7UHvk9q9CesFMDpiGDWpGZM"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps px-3 py-1.5 rounded-full backdrop-blur-md bg-opacity-95 shadow-md">
+                    Ã¢â€šÂ¹12,500
+                </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">Royal Ayodhya Full Day Trail</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A comprehensive luxury tour covering all major sites with private transport and gourmet prasad arrangements.</p>
+</div>
+<div>
+<div class="flex gap-6 mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
+                            8 Hours
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">group</span>
+                            2-6 Pax
+                        </div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-3.5 rounded-lg hover:bg-surface-tint hover:shadow-[0_4px_12px_rgba(165,61,0,0.3)] transition-all duration-300">Book Now</button>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(255,102,17,0.08)] border-l-[4px] border-primary relative flex flex-col group hover:shadow-[0_12px_48px_rgba(255,102,17,0.12)] transition-shadow duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A tranquil interior of a luxury spiritual retreat in Ayodhya. Monolithic cream walls, minimal decor, brass oil lamps, and a view of a lush courtyard. The mood is deeply peaceful and meditative, representing the pinnacle of modern devotional luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArfZWMPZuEgx4UmMOPzjA0ov8Hj92FwnOA7FNA1-jdN-hnNRbeyqUhRSPaJpJpdn0UDWiZ38YDGR6kQFvC26atkJsGqdHfYqDpcI_tJehz5vvd6OQq4HrBiTG6YKzl2EKaWKrAqQCPXrHDhfpsceFq7ci7a5miOWmH3pVZ8nfGv7PI-qRe2UdEmK4tZ2uJyEIOMP-yzB6Sn2VwlQxVisWeLQgQZ84OVbt02qr48HyJ4MqK2X6H4VDH"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps px-3 py-1.5 rounded-full backdrop-blur-md bg-opacity-95 shadow-md">
+                    Ã¢â€šÂ¹6,000
+                </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">Meditation &amp; Heritage Walk</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A guided morning walk through ancient lanes culminating in a private meditation session by the riverbank.</p>
+</div>
+<div>
+<div class="flex gap-6 mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
+                            5 Hours
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">group</span>
+                            1-2 Pax
+                        </div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-3.5 rounded-lg hover:bg-surface-tint hover:shadow-[0_4px_12px_rgba(165,61,0,0.3)] transition-all duration-300">Book Now</button>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(255,102,17,0.08)] border-l-[4px] border-primary relative flex flex-col group hover:shadow-[0_12px_48px_rgba(255,102,17,0.12)] transition-shadow duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A detailed close-up of intricate gold and floral offerings (Prasad) presented on a silver platter, set against a soft out-of-focus background of a temple interior. Rich saffron, gold, and maroon tones communicate exclusivity, tradition, and supreme quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAac1LW_OLY9WCpk9utbniDWzPqg-dYa5iBhW5gu2nEIQwRR38m0FEYUuzJDTzK7zsGD-836syMgGUgnumPNvSg0i2RuE9rGdFhp0WvbUKBkvAtT5ZwjG165n1nL3i-YAY3yuHVuuw-rl4uvK0CJB-zIeiau1IEhsJu-8vzfnnRBPq5ZOzrMEvNvAYrERFEnurozekedw34ceFAHBw6QjSMWtU_owGwX2WuT4ESLc-pJd79_1UiAU4s"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps px-3 py-1.5 rounded-full backdrop-blur-md bg-opacity-95 shadow-md">
+                    Ã¢â€šÂ¹3,500
+                </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">Hidden Temples Guided Tour</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Discover the lesser-known, deeply spiritual shrines of Ayodhya away from the crowds with a local expert.</p>
+</div>
+<div>
+<div class="flex gap-6 mb-6">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
+                            4 Hours
+                        </div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px] text-primary">group</span>
+                            2-5 Pax
+                        </div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-3.5 rounded-lg hover:bg-surface-tint hover:shadow-[0_4px_12px_rgba(165,61,0,0.3)] transition-all duration-300">Book Now</button>
+</div>
+</div>
+</article>
+</main>
+<!-- MOBILE BOTTOM NAV BAR -->
+<nav class="md:hidden fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] rounded-t-xl z-50">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors font-label-caps text-[10px]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-size: 24px;">home</span>
+<span>Home</span>
+</a>
+<!-- Tours (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim translate-y-[-2px] transition-transform p-2 rounded-lg font-label-caps text-[10px]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-size: 24px; font-variation-settings: 'FILL' 1;">temple_hindu</span>
+<span>Tours</span>
+</a>
+<!-- Guides (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors font-label-caps text-[10px]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-size: 24px;">person_pin</span>
+<span>Guides</span>
+</a>
+<!-- Rooms (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors font-label-caps text-[10px]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-size: 24px;">bed</span>
+<span>Rooms</span>
+</a>
+<!-- Contact (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors font-label-caps text-[10px]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-size: 24px;">chat</span>
+<span>Contact</span>
+</a>
+</nav>
+<script src="/Build/navigation.js"></script>
+</body></html>

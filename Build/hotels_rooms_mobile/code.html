@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Accommodations - Divine Heritage</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#715300",
+                    "surface-tint": "#a53d00",
+                    "on-tertiary-container": "#5e1213",
+                    "tertiary-container": "#e37772",
+                    "on-tertiary-fixed-variant": "#7e2a29",
+                    "on-primary-fixed-variant": "#7e2c00",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#f6be39",
+                    "on-surface": "#1d1c17",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#9d413e",
+                    "secondary-fixed": "#ffdfa0",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f8f3eb",
+                    "surface-container-highest": "#e7e2da",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#ece8e0",
+                    "on-primary-fixed": "#360f00",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fef9f1",
+                    "on-surface-variant": "#5a4137",
+                    "primary-fixed-dim": "#ffb597",
+                    "inverse-on-surface": "#f5f0e8",
+                    "primary": "#a53d00",
+                    "inverse-surface": "#32302b",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#ffc641",
+                    "background": "#fef9f1",
+                    "primary-fixed": "#ffdbcd",
+                    "surface-variant": "#e7e2da",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "surface-dim": "#ded9d2",
+                    "on-background": "#1d1c17",
+                    "surface-container": "#f2ede5",
+                    "surface": "#fef9f1",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-tertiary-fixed": "#410004",
+                    "outline-variant": "#e3bfb1",
+                    "secondary": "#795900",
+                    "primary-container": "#ff6611",
+                    "inverse-primary": "#ffb597",
+                    "outline": "#8e7165",
+                    "on-primary-container": "#571c00",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#5c4300"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Libre Caslon Text"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Libre Caslon Text"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "label-caps": ["Inter"],
+                    "headline-md": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom Scrollbar for hidden scroll effect */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+        
+        .tab-active {
+            @apply bg-surface-container-lowest text-primary shadow-sm;
+        }
+        .tab-inactive {
+            @apply text-on-surface-variant hover:text-primary transition-colors;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container flex flex-col">
+<!-- TopNavBar (Desktop) - Suppressed visually on mobile, structurally present for semantic rules -->
+<nav class="hidden md:flex justify-between items-center px-8 py-3 max-w-container-max mx-auto fixed top-0 left-0 right-0 z-50 mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)]">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">
+            Divine Heritage
+        </div>
+<div class="flex gap-6 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors duration-300 uppercase" href="#">Heritage</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors duration-300 uppercase" href="#">Darshan</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors duration-300 uppercase" href="#">Luxury</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors duration-300 uppercase" href="#">Spiritual</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:shadow-lg transition-all duration-300">
+                Plan Your Visit
+            </button>
+</div>
+</nav>
+<!-- Mobile Header Context -->
+<header class="md:hidden pt-12 pb-4 px-margin-mobile bg-surface/90 backdrop-blur-md sticky top-0 z-40 border-b border-outline-variant/20">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface text-center">Accommodations</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col pt-4 pb-[100px] w-full max-w-container-max mx-auto">
+<!-- Segmented Control (Tabs) -->
+<div class="mx-margin-mobile md:mx-auto md:w-96 bg-surface-container rounded-full p-1 flex mb-8">
+<button class="flex-1 py-3 text-center font-label-caps text-label-caps uppercase rounded-full transition-all duration-300 tab-active" id="btn-hotels" onclick="switchTab('hotels')">
+                Hotels
+            </button>
+<button class="flex-1 py-3 text-center font-label-caps text-label-caps uppercase rounded-full transition-all duration-300 tab-inactive" id="btn-rooms" onclick="switchTab('rooms')">
+                Rooms
+            </button>
+</div>
+<!-- TAB 1: HOTELS CONTENT -->
+<div class="px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="content-hotels">
+<!-- Hotel Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_8px_32px_rgba(255,102,17,0.08)] overflow-hidden border-l-4 border-primary hover:shadow-[0_12px_40px_rgba(255,102,17,0.12)] transition-shadow duration-300 flex flex-col group">
+<div class="relative h-48 md:h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Exterior of a luxury boutique hotel in Ayodhya during twilight. The building features modern minimalist lines fused with subtle traditional Indian architectural motifs. Warm, inviting light spills from the windows onto lush, manicured landscaping. The atmosphere is serene, exclusive, and spiritually uplifting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnK9PKOnyTlKrWeoOihMXa8R7De1jGSZYKNwUU7PE3CQhZ9GjXq7Hw92puCxy0WqG-6AV2cGVODd6E_rjPcZUKCIId2gn0sEk_QgM3RwYjM17aHiP44Th_SjMMxojg7-9G1WtfM2hfSCdhFV8nHCRNOhtyOL6Ahv5EBJ_JCkUiRwTgJR5Gh5aZL-A6lhS7cdtVXTBbhk81ty-yr8EwpE54Qfd9eMpmRtfPLHvT2PmhQ2BIo8jysYFg"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-sm fill-icon">star</span>
+<span class="font-label-caps text-label-caps text-on-surface font-bold">4.9</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">The Sarayu Retreat</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A tranquil oasis offering boutique luxury just minutes from the sacred river, blending modern comfort with spiritual serenity.</p>
+<div class="mt-auto flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<div>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-1">Starting from</span>
+<span class="font-headline-sm text-[20px] text-primary">Ã¢â€šÂ¹12,500<span class="font-body-md text-sm text-on-surface-variant">/night</span></span>
+</div>
+<button class="border border-secondary text-on-secondary-container px-4 py-2 rounded-full font-label-caps text-label-caps hover:bg-secondary/10 transition-colors uppercase">
+                            View Hotel
+                        </button>
+</div>
+</div>
+</article>
+<!-- Hotel Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_8px_32px_rgba(255,102,17,0.08)] overflow-hidden border-l-4 border-primary hover:shadow-[0_12px_40px_rgba(255,102,17,0.12)] transition-shadow duration-300 flex flex-col group">
+<div class="relative h-48 md:h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A grand entrance to a heritage luxury hotel in Ayodhya. Intricately carved stone pillars stand beside sleek glass doors. Soft, warm ambient lighting highlights the rich textures of the materials. The setting evokes a sense of deep respect for tradition combined with high-end modern hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0JVsSPWi7hiDMJVRChlakPwNihxPcBiyiCEeGxtnasmj0Su3rpoo1IIwTufiRrpzpZuhtZsmljrY4TFL3T7ksY88UlxqGxfSwgjegKHJadZX-DFaum1hqH6rprTcGk2y2naSkClqjHQqTihP6hEN_md4A1RD3CM4YQgenyIVefLxwP4lpAQuTcyUSG5iA9JtlosgKThbFUx_UoFobX3NgKjifei0YLDrZLy2L_d48guhd6iw0a_06"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-sm fill-icon">star</span>
+<span class="font-label-caps text-label-caps text-on-surface font-bold">4.8</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Awadh Heritage</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Experience the royal legacy of Ayodhya in our meticulously restored heritage property featuring traditional courtyards.</p>
+<div class="mt-auto flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<div>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase block mb-1">Starting from</span>
+<span class="font-headline-sm text-[20px] text-primary">Ã¢â€šÂ¹9,800<span class="font-body-md text-sm text-on-surface-variant">/night</span></span>
+</div>
+<button class="border border-secondary text-on-secondary-container px-4 py-2 rounded-full font-label-caps text-label-caps hover:bg-secondary/10 transition-colors uppercase">
+                            View Hotel
+                        </button>
+</div>
+</div>
+</article>
+</div>
+<!-- TAB 2: ROOMS CONTENT -->
+<div class="hidden px-margin-mobile md:px-margin-desktop flex flex-col gap-8" id="content-rooms">
+<!-- Room Category 1 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_8px_32px_rgba(255,102,17,0.08)] overflow-hidden border-l-4 border-primary flex flex-col md:flex-row">
+<div class="w-full md:w-2/5 h-56 md:h-auto relative">
+<img class="w-full h-full object-cover" data-alt="Interior of a luxury suite in an Ayodhya hotel. The room features a minimalist design with pristine cream walls, accented by elegant gold and saffron textiles. A large window offers a serene view of a distant temple spire. Plush, white bedding sits on a grand wooden bed, creating a peaceful and opulent atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXd2QJjx37wNQRBeMV4KeHsINgU7gfv9ZnXVF1WjvgoUiGsfj5Fog_U_WXY7KyLltg9GLYY-2y9Xu_RmjIdHvmPSzYCSi-09eAZgIl9KzMtZgf64T0nvffv6idZvUQ8BUWdVLvnxHwWGgny7gMIg1b2_0BT-IYXystUNfpmMZ0rw2aE81UcM7gbvC0od_lJ5PWMWcrsL8umCAownuxejMW1QU4Ix1TKbQ2pAu5XY1BNDCkpARHg3XE"/>
+</div>
+<div class="p-6 md:p-8 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Heritage Suite</h3>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full font-label-caps text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span> 2 Adults, 1 Child
+                                </span>
+<span class="bg-tertiary-container/20 text-tertiary px-3 py-1 rounded-full font-label-caps text-[10px] flex items-center gap-1 border border-tertiary/30">
+<span class="material-symbols-outlined text-[14px]">star</span> Temple View
+                                </span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">Our premier suite offers expansive views of the sacred landscape, featuring a private balcony, a lavish seating area, and bespoke artisanal furnishings that reflect the spirit of Ayodhya.</p>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-auto">
+<div class="w-full sm:w-auto">
+<span class="font-headline-sm text-[24px] text-primary block">Ã¢â€šÂ¹18,500<span class="font-body-md text-sm text-on-surface-variant">/night</span></span>
+<span class="font-body-md text-[12px] text-on-surface-variant">Excludes taxes &amp; fees</span>
+</div>
+<button class="w-full sm:w-auto bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:shadow-lg hover:bg-surface-tint transition-all uppercase">
+                            Book Room
+                        </button>
+</div>
+</div>
+</article>
+<!-- Room Category 2 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_8px_32px_rgba(255,102,17,0.08)] overflow-hidden border-l-4 border-primary flex flex-col md:flex-row">
+<div class="w-full md:w-2/5 h-56 md:h-auto relative">
+<img class="w-full h-full object-cover" data-alt="A modern deluxe room interior in an Ayodhya boutique hotel. Bright, natural light fills the space, highlighting clean lines and a soothing neutral color palette. Subtle traditional Indian patterns are woven into the cushions and rug. The room feels comfortable, pristine, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqoesNOJwdAg56VY_i0KKCKEbK7skInIwhrgJIymLnGk2ipnu_BBMAA91-52_IAphoUG90fRVTVD5G7G8ardv6I5bTPSXbC0WvM9KsoMHQi4cDRxqBe7QlLuJ2zQHmqBNRiC3lgO6hf9QGGR8tXiR1ajpof5hDYSREBdkd_jJmjXW63_4Zdr1cModz8GTqszVh17_79QDrfHOhDA1Z_ocMx-9ZFutENZrLQO9sICUHDQJkcnvBidh-"/>
+</div>
+<div class="p-6 md:p-8 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Deluxe Room</h3>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full font-label-caps text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span> 2 Adults
+                                </span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">A beautifully appointed space designed for ultimate relaxation after a day of Darshan. Features an exceptionally comfortable king bed and a modern en-suite.</p>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-auto">
+<div class="w-full sm:w-auto">
+<span class="font-headline-sm text-[24px] text-primary block">Ã¢â€šÂ¹8,000<span class="font-body-md text-sm text-on-surface-variant">/night</span></span>
+<span class="font-body-md text-[12px] text-on-surface-variant">Excludes taxes &amp; fees</span>
+</div>
+<button class="w-full sm:w-auto bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:shadow-lg hover:bg-surface-tint transition-all uppercase">
+                            Book Room
+                        </button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-caps text-[10px] uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">temple_hindu</span>
+<span class="font-label-caps text-[10px] uppercase">Tours</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">person_pin</span>
+<span class="font-label-caps text-[10px] uppercase">Guides</span>
+</a>
+<!-- Active Tab: Rooms -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim translate-y-[-2px] transition-transform p-2" href="#">
+<span class="material-symbols-outlined mb-1 fill-icon">bed</span>
+<span class="font-label-caps text-[10px] uppercase">Rooms</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant opacity-70 hover:bg-primary-container/10 p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-caps text-[10px] uppercase">Contact</span>
+</a>
+</nav>
+<!-- Simple script to handle tab switching -->
+<script>
+        function switchTab(tabName) {
+            const hotelsBtn = document.getElementById('btn-hotels');
+            const roomsBtn = document.getElementById('btn-rooms');
+            const hotelsContent = document.getElementById('content-hotels');
+            const roomsContent = document.getElementById('content-rooms');
+
+            if (tabName === 'hotels') {
+                hotelsBtn.classList.add('tab-active');
+                hotelsBtn.classList.remove('tab-inactive');
+                roomsBtn.classList.add('tab-inactive');
+                roomsBtn.classList.remove('tab-active');
+                
+                hotelsContent.classList.remove('hidden');
+                roomsContent.classList.add('hidden');
+            } else {
+                roomsBtn.classList.add('tab-active');
+                roomsBtn.classList.remove('tab-inactive');
+                hotelsBtn.classList.add('tab-inactive');
+                hotelsBtn.classList.remove('tab-active');
+                
+                roomsContent.classList.remove('hidden');
+                hotelsContent.classList.add('hidden');
+            }
+        }
+    </script>
+<script src="/Build/navigation.js"></script>
+</body></html>

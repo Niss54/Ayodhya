@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Girls Hostel - Divine Heritage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#715300",
+                        "surface-tint": "#a53d00",
+                        "on-tertiary-container": "#5e1213",
+                        "tertiary-container": "#e37772",
+                        "on-tertiary-fixed-variant": "#7e2a29",
+                        "on-primary-fixed-variant": "#7e2c00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#f6be39",
+                        "on-surface": "#1d1c17",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#9d413e",
+                        "secondary-fixed": "#ffdfa0",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f8f3eb",
+                        "surface-container-highest": "#e7e2da",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#ece8e0",
+                        "on-primary-fixed": "#360f00",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fef9f1",
+                        "on-surface-variant": "#5a4137",
+                        "primary-fixed-dim": "#ffb597",
+                        "inverse-on-surface": "#f5f0e8",
+                        "primary": "#a53d00",
+                        "inverse-surface": "#32302b",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#ffc641",
+                        "background": "#fef9f1",
+                        "primary-fixed": "#ffdbcd",
+                        "surface-variant": "#e7e2da",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "surface-dim": "#ded9d2",
+                        "on-background": "#1d1c17",
+                        "surface-container": "#f2ede5",
+                        "surface": "#fef9f1",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-tertiary-fixed": "#410004",
+                        "outline-variant": "#e3bfb1",
+                        "secondary": "#795900",
+                        "primary-container": "#ff6611",
+                        "inverse-primary": "#ffb597",
+                        "outline": "#8e7165",
+                        "on-primary-container": "#571c00",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#5c4300"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "safe": "env(safe-area-inset-bottom)"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Libre Caslon Text"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(254, 249, 241, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glow-shadow {
+            box-shadow: 0 8px 32px rgba(255,102,17,0.08);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen pb-24 md:pb-0">
+<!-- Top Navigation (Desktop) -->
+<nav class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[95%] rounded-full bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-3 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary tracking-tight">Divine Heritage</div>
+<div class="flex space-x-6 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Heritage</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Darshan</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-label-caps text-label-caps uppercase hover:text-primary transition-colors duration-300" href="#">Luxury</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Spiritual</a>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary" data-icon="language">language</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:shadow-lg transition-shadow duration-300 uppercase">Plan Your Visit</button>
+</div>
+</nav>
+<!-- Mobile Header (Task-Focused - No Nav Shell here, but providing a back button) -->
+<header class="md:hidden sticky top-0 z-40 bg-background/95 backdrop-blur-md px-4 py-4 flex items-center justify-between border-b border-surface-variant">
+<button class="text-on-surface p-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Secure Stays</h1>
+<div class="w-10"></div> <!-- Spacer -->
+</header>
+<main class="max-w-container-max mx-auto px-4 md:px-margin-desktop pt-6 md:pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="mb-12 relative rounded-xl overflow-hidden bg-surface-container-low glow-shadow">
+<div class="h-64 md:h-96 w-full" data-alt="A serene, well-lit, and incredibly clean female dormitory room in Ayodhya. The interior is modern minimalist with warm cream walls, high-quality wooden bunk beds, and subtle saffron accents on the pristine white bed linens. Sunlight streams through a large window, creating a safe, peaceful, and inviting atmosphere. The space feels luxurious yet practical, reflecting a 'devotional luxury' aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBE_WhNkf6dRW18Hzj_s-5wKYX6iBjbc00pd0Nx_WABoUTZutxYrBK-f7d93rcK-AsAQ9HwtTcf-EUPc6s6AB1hcZAofKhyBwhiCR393n8uD9eOi86KwXPBiRB12gR7DyUobjl4li7yDpOwS3Eewp4sqE1MJJT1kRjix2ZUUWNfItfHOa0LHoVEflRGtSXeEsiTH56kLNHXurUswA2k7k5etaAQvvOPRaFuSSKnhN78gNCQKUSUdY0o')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent flex flex-col justify-end p-6 md:p-12">
+<div class="inline-flex items-center gap-2 bg-tertiary-container/20 text-tertiary px-3 py-1 rounded-full mb-4 w-fit border border-tertiary/20 backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm" data-icon="shield" data-weight="fill">shield</span>
+<span class="font-label-caps text-label-caps uppercase">Women Only Facility</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">Safe Haven Girls Hostel</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">A sanctuary of peace and security in the heart of Ayodhya. Designed exclusively for female pilgrims seeking a secure, clean, and spiritually enriching stay.</p>
+</div>
+</section>
+<!-- Trust & Security Grid -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Safety First</h2>
+<div class="h-px bg-surface-variant flex-grow"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- CCTV -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant glow-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-2">24/7 CCTV Surveillance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive camera coverage across all common areas, corridors, and entry points ensuring constant monitoring.</p>
+</div>
+<!-- Lady Staff -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant glow-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-2">Lady Staff Only</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Managed exclusively by trained female staff round the clock, providing a comfortable and understanding environment.</p>
+</div>
+<!-- Restricted Entry -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant glow-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 flex items-center justify-center mb-4 text-tertiary">
+<span class="material-symbols-outlined" data-icon="no_accounts">no_accounts</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-2">Restricted Entry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Strict biometric access control. Male visitors are strictly prohibited beyond the reception lounge.</p>
+</div>
+<!-- Secure Lockers -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant glow-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-2">Secure Lockers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Personal, spacious lockers provided with every bed to keep your valuables and luggage completely safe.</p>
+</div>
+<!-- Clean Bathrooms -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant glow-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-2">Immaculate Hygiene</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Western and Indian style washrooms cleaned multiple times a day. Hot water available 24/7.</p>
+</div>
+<!-- Prayer Room -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant glow-shadow hover:-translate-y-1 transition-transform duration-300 border-l-4 border-l-primary">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined" data-icon="self_improvement">self_improvement</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-2">Dedicated Prayer Room</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A serene, quiet space within the premises for meditation and daily rituals, facing the Ram Mandir direction.</p>
+</div>
+</div>
+</section>
+<!-- Pricing & Booking -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Accommodation Options</h2>
+<div class="h-px bg-surface-variant flex-grow"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Dorm Bed -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl border border-surface-variant overflow-hidden glow-shadow">
+<div class="h-48 w-full relative" data-alt="A close-up view of a high-quality wooden bunk bed in a clean, brightly lit female dormitory. The bed features a comfortable mattress covered in crisp white sheets with a subtle saffron runner. A personal reading light and a small shelf are visible. The atmosphere is cozy, secure, and modern, fitting a luxury pilgrimage aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIJ27aBD72cKaFPY0cvJR21E0XD6_wA3MWcozIeZrcKypQ6227Ujxohrg7KNns1v-7cbaeaApvsIdJi_ObeNlNlIMmGgWZ7tKZ-qTWwR8yguNvyzTmOXlVXh-Lmfp27wiVMLSEUzP4ycRwjN6Av8AuTOy3SaYTg6nkPzijeqQ9G795yFWk90vgBUSljKfahn-U_9nnvIumdMFVLQcKwclqC-QBOGFOlQfr-sD7A8M_B-HSO1rZFwdh')">
+<div class="absolute top-4 right-4 bg-surface/90 px-3 py-1 rounded-full font-label-caps text-[10px] uppercase text-primary font-bold">Popular</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-sm text-[22px] text-on-surface">Premium Dorm Bed</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">4-Bed Shared Dormitory</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary">Ã¢â€šÂ¹300</span>
+<span class="block font-label-caps text-label-caps text-on-surface-variant uppercase">/ night</span>
+</div>
+</div>
+<ul class="space-y-2 mb-6 flex-grow font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Privacy curtains</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Reading light &amp; charging port</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Large secure locker</li>
+</ul>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-caps text-label-caps uppercase hover:bg-surface-tint transition-colors">Select Bed</button>
+</div>
+</div>
+<!-- Private Room -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl border border-primary/30 overflow-hidden glow-shadow">
+<div class="h-48 w-full relative" data-alt="A small but luxurious private room in a women-only facility in Ayodhya. The room features a comfortable single bed with premium white linens and gold accent pillows. A small wooden desk and a large window with soft cream curtains complete the look. The lighting is warm and inviting, emphasizing cleanliness and a 'boutique' religious travel experience." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgGYgbKcqOJE0htIYUdIOBh-4WmCZRZU3LP0T2lW6vGR3vQyzTPr2OlIS4RoSvLvNGq7KT8LywNmO12uifHvp-UfwOlfhZOTkm2TPZ5hK8TFgufqVaRU-P0IcxAoMV9E_t8Ckj8auNZFR1Y3aBciSZykGC66Bv_FhcLsaUZGGb1mekSEFTfkzXfk0q1_ZPWaRr2D85Lm6vvpoAsYOL_V5PAWvOTpZ97Jg058cCK3cxoq5Pcgawjb9p')">
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-caps text-[10px] uppercase font-bold">Private</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-sm text-[22px] text-on-surface">Private Single Room</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Exclusive occupancy</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary">Ã¢â€šÂ¹600</span>
+<span class="block font-label-caps text-label-caps text-on-surface-variant uppercase">/ night</span>
+</div>
+</div>
+<ul class="space-y-2 mb-6 flex-grow font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> En-suite bathroom</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Work desk &amp; chair</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span> Complimentary breakfast</li>
+</ul>
+<button class="w-full bg-transparent border-2 border-primary text-primary py-3 rounded-lg font-label-caps text-label-caps uppercase hover:bg-primary/5 transition-colors">Select Room</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile Sticky Booking Bar -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 glass-panel border-t border-surface-variant p-4 pb-safe flex justify-between items-center">
+<div>
+<span class="block font-label-caps text-[10px] text-on-surface-variant uppercase mb-1">Starting from</span>
+<span class="font-headline-sm text-[20px] text-on-surface">Ã¢â€šÂ¹300<span class="font-body-md text-sm text-on-surface-variant">/night</span></span>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase shadow-lg">Reserve</button>
+</div>
+<!-- Footer (Desktop Only for this focused screen) -->
+<footer class="hidden md:flex w-full rounded-none border-t border-outline-variant bg-surface-container-highest dark:bg-inverse-surface py-12 px-margin-mobile md:px-margin-desktop flex-col items-center gap-6">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary">Divine Heritage</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Luxury Guidelines</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Contact Us</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">Ã‚Â© 2024 Divine Heritage Ayodhya. All Rights Reserved.</div>
+</footer>
+<script src="/Build/navigation.js"></script>
+</body></html>
