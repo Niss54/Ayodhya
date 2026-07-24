@@ -1,0 +1,110 @@
+<main class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Sedan AC Card -->
+<article class="bg-surface-container-lowest rounded-xl saffron-shadow overflow-hidden border-l-4 border-l-primary flex flex-col group hover:-translate-y-1 transition-transform duration-300">
+<div class="h-48 bg-surface-container w-full relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-700" data-alt="A sleek, modern white sedan parked gracefully outside an elegant, traditional Indian temple complex with soft, warm morning sunlight. Devotional luxury aesthetic, high contrast, clean cream and saffron tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyw8vkIP5TO6wcLy_kS-5sEUAG1YPoHV_qofe61PTxuPdJ9o8rBnoquceN-bh_AneHmEwgkeh2wlYrJNnxlIyYci8Br776n4G_-p6RFJT7zwrZRX5Fm9vpbZlNH5Bf9ut7naRrTw4kodmzNgg0IDbA_o9fmSmMnMsQxumPUsUwnhMBEmvLQR4dDo0zm8_lzINf7TIeSlFRmQGCL33bqlmqCqfiQXeyq-bXfDWQpV-O30OX0Sl-iNIb')"></div>
+<div class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="ac_unit" data-weight="fill" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+                        AC
+                    </div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Premium Sedan</h2>
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="directions_car">directions_car</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Comfortable, air-conditioned ride for small families or couples.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container rounded-lg font-label-caps text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="group">group</span>
+                            4 Seats
+                        </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container rounded-lg font-label-caps text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="luggage">luggage</span>
+                            2 Bags
+                        </span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Starting from</div>
+<div class="font-headline-sm text-headline-sm text-primary">₹300<span class="font-body-md text-body-md text-on-surface-variant">/hr</span></div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-tint transition-colors shadow-sm hover:shadow-md hover:shadow-primary/20">Book Now</button>
+</div>
+</div>
+</article>
+<!-- SUV Card -->
+<article class="bg-surface-container-lowest rounded-xl saffron-shadow overflow-hidden border-l-4 border-l-primary flex flex-col group hover:-translate-y-1 transition-transform duration-300">
+<div class="h-48 bg-surface-container w-full relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-700" data-alt="A spacious, premium white SUV positioned on a clean, sunlit street in Ayodhya, with architectural heritage elements softly blurred in the background. Modern Indian luxury aesthetic, pristine whites and warm sunlight." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4ZwwYMAmWF5efPqGBiy3EqbD1WMInVtiWKljN8D1kTKmGSPHRmcN4RiD7lDPv4DRoCuqVr9U3MrV5F0LJZJOMOE8eiL2vqNkxvZd673-GGUQjT96d05-oILWUQp0nfQCQtQ-GO9hLKOqeg1pBH4qYgZ6iima3k4vfP9C41xEzQU9jTqFbTMnfgewkM8xFagzhHbUsGbb2PoPFgqj3IBtuZJAW7GRxAtMwcaBN5ZOGWByNdJuZpJa3')"></div>
+<div class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="ac_unit" data-weight="fill" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+                        AC
+                    </div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Luxury SUV</h2>
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="airport_shuttle">airport_shuttle</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Spacious seating with excellent suspension for a smooth pilgrimage.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container rounded-lg font-label-caps text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="group">group</span>
+                            6-7 Seats
+                        </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container rounded-lg font-label-caps text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="luggage">luggage</span>
+                            4 Bags
+                        </span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Starting from</div>
+<div class="font-headline-sm text-headline-sm text-primary">₹500<span class="font-body-md text-body-md text-on-surface-variant">/hr</span></div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-tint transition-colors shadow-sm hover:shadow-md hover:shadow-primary/20">Book Now</button>
+</div>
+</div>
+</article>
+<!-- E-Rickshaw Card -->
+<article class="bg-surface-container-lowest rounded-xl saffron-shadow overflow-hidden border-l-4 border-l-primary flex flex-col group hover:-translate-y-1 transition-transform duration-300">
+<div class="h-48 bg-surface-container w-full relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-700" data-alt="A clean, vibrant orange and white electric rickshaw traversing a serene, narrow alleyway in Ayodhya. Soft morning mist and golden hour lighting. Eco-friendly, authentic heritage travel vibe, very high quality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVOO7-0TxDf5T4xJZL2LaZkfQlJUhBmk9Po0mkgWON9E8hkFzynlo42Z3cdascLlJsr-S57bLNyWsfJGDyZuSbHMxHDkmBvRvysAFxJzsTq0VmkCcOE6HLJTxqiNQ_W0BRfecp11PuCM9snzgdrch7GbJsNWl1S23ahI0BuNxnP1BoNrhAdRBQ0wcyTS-Na6_FSgpx__DXfXApmZXHIosI-FV3VX5c0WvEdg2x04Af2hg5jG8PrZwC')"></div>
+<div class="absolute top-4 right-4 bg-surface-variant text-on-surface px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-1 shadow-sm border border-outline-variant/50">
+<span class="material-symbols-outlined text-[14px]" data-icon="air" data-weight="fill" style="font-variation-settings: 'FILL' 1;">air</span>
+                        Open Air
+                    </div>
+<div class="absolute top-4 left-4 bg-[#4CAF50] text-white px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="eco" data-weight="fill" style="font-variation-settings: 'FILL' 1;">eco</span>
+                        Eco
+                    </div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">E-Rickshaw</h2>
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="electric_rickshaw">electric_rickshaw</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Eco-friendly and silent. Perfect for navigating narrow temple lanes.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container rounded-lg font-label-caps text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="group">group</span>
+                            4 Seats
+                        </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container rounded-lg font-label-caps text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_mall">local_mall</span>
+                            Hand Baggage
+                        </span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Starting from</div>
+<div class="font-headline-sm text-headline-sm text-primary">₹150<span class="font-body-md text-body-md text-on-surface-variant">/hr</span></div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-tint transition-colors shadow-sm hover:shadow-md hover:shadow-primary/20">Book Now</button>
+</div>
+</div>
+</article>
+</div>
+</main>
