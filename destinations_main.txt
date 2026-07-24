@@ -1,0 +1,80 @@
+<main class="pt-[90px] px-margin-mobile pb-8 max-w-md mx-auto flex flex-col gap-8">
+<!-- Intro Section -->
+<section class="flex flex-col gap-2">
+<p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Sacred Sites</p>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-surface leading-tight">
+                Explore the <br/><span class="text-primary italic">Divine Heritage</span>
+</h2>
+<p class="text-on-surface-variant font-body-md mt-2">Discover the timeless temples, serene ghats, and spiritual landmarks of Ayodhya.</p>
+</section>
+<!-- Featured Destination Card (Bento Style Large) -->
+<article class="relative w-full rounded-2xl overflow-hidden card-shadow bg-surface-container-lowest group cursor-pointer active:scale-[0.98] transition-transform duration-300">
+<div class="h-64 w-full bg-surface-variant relative overflow-hidden">
+<img alt="Ram Mandir" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking, cinematic wide shot of the Ram Mandir in Ayodhya at golden hour. The majestic architecture is bathed in warm, divine light, emphasizing intricate carvings and saffron flags gently blowing in the breeze. The scene evokes a deep sense of devotion, luxury, and spiritual grandeur, perfectly aligning with a modern, premium travel aesthetic. Warm saffron and cream tones dominate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp6dJBAf7TKWyIEwPQNkF_46YwrkHV2hvYtCAK3h1lLUZfvB-FD7FvfavByp3JIYptnN4OB_tTamb0h02sxBEFsIeAxjfAygfFbmYESKgilQk8597DveR84OanGwoNqh4NDHL8iAeklzMxFSveNBIJ12oh8EV1yfiC_kKG2trWWyO6eY-PmxvMPPNrXR_5oTjLCsL2DNIk_q-2Rc_NCgvOVDZmJcjNVcAiZiHnp3fb67fyBkJDFuIJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<!-- VIP Chip -->
+<div class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full flex items-center gap-1 shadow-lg backdrop-blur-sm bg-opacity-90 border border-tertiary/50">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-[10px]">Must Visit</span>
+</div>
+</div>
+<div class="relative p-5 bg-surface-container-lowest border-l-4 border-primary">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Shri Ram Janmabhoomi Temple</h3>
+</div>
+<p class="font-body-md text-on-surface-variant line-clamp-2 mb-4">The sacred birthplace of Lord Rama, featuring magnificent traditional architecture and deep spiritual resonance.</p>
+<div class="flex items-center gap-4 text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">nest_clock_farsight_analog</span>
+<span class="font-label-caps text-[10px]">06:00 AM - 11:30 AM</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label-caps text-[10px]">Ramkot</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Secondary Destinations Grid (Asymmetric) -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Card 2 -->
+<article class="relative w-full rounded-xl overflow-hidden card-shadow bg-surface-container-lowest group cursor-pointer active:scale-[0.98] transition-transform duration-300 flex flex-col">
+<div class="h-40 w-full bg-surface-variant relative overflow-hidden">
+<img alt="Hanuman Garhi" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, highly detailed view of Hanuman Garhi temple steps leading up to the main entrance. Devotees in vibrant traditional clothing are seen ascending. The lighting is bright and atmospheric, casting dramatic shadows. The architectural details, including red sandstone and brass elements, are sharp and luxurious, fitting a premium heritage design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs2XS0YTL40OGAKxQOiYOL9npiwwWGVM9AK4mUSfIi7jSAsRwn6Dtz2ZTX4OEjIBo0S5T6y2yDk7f3d3uy1pOsxQ-c7sqnXvfzaOdkib6R5Iy7PM__7X3yhStf7QdULJx7WOSv9RKk5-SCu2Il5K6sXNTA2_iH_NsEm-yW3OIJSf_ZcBlKk7OnuISBu4UuDargjneLVT3faQi84uiJIMyZ0t3SyCu0i7K2C3x_Dzi5TMRAunT59G6r"/>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-1 leading-tight">Hanuman Garhi</h4>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Fortress Temple</p>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="relative w-full rounded-xl overflow-hidden card-shadow bg-surface-container-lowest group cursor-pointer active:scale-[0.98] transition-transform duration-300 flex flex-col">
+<div class="h-40 w-full bg-surface-variant relative overflow-hidden">
+<img alt="Saryu Ghat" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene evening view of Saryu Ghat in Ayodhya during the Aarti ceremony. Hundreds of lit diyas (oil lamps) float on the gentle river waters, reflecting warm golden light. The scene is peaceful, mystical, and luxurious, capturing the essence of spiritual tourism with deep saffron, gold, and cool twilight blue tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc5ZQJ2QUqYvTn9O1cYW9qIJ3LgcGPSrkcBt-NyLiIWtmymLRZhGLYuG3Pb9VyFaJmH5Plso01lCikcdvSyR6PkOSOf2oibdVYYm6nCEnjRjD1K1T9SdkuYSnlROCY3dxCo307MZGcSwklZcebrNZ6kYY1Jd434dqaEGJ-Io02LvKc6IVuVOGPu68tOlp_FmzrMPp1Nd7jrambNU2KUgYKNcHwYbZLK6OdJ8PWOguPZJrxloSMPKbI"/>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-1 leading-tight">Saryu Ghat</h4>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Sacred Waters</p>
+</div>
+</div>
+</article>
+<!-- Card 4 (Full width span in grid) -->
+<article class="col-span-2 relative w-full rounded-xl overflow-hidden card-shadow bg-surface-container-lowest group cursor-pointer active:scale-[0.98] transition-transform duration-300 flex flex-row h-32">
+<div class="w-1/3 bg-surface-variant relative overflow-hidden h-full">
+<img alt="Kanak Bhawan" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="The intricately decorated interior courtyard of Kanak Bhawan in Ayodhya, glowing softly under warm ambient lighting. The architecture features exquisite gold detailing and intricate patterns, embodying Devotional Luxury. The space feels tranquil, exclusive, and spiritually significant, styled with high contrast between deep maroons and bright gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGlrsul4O3OpZfwjESkKwEgYzkyApfVv-llJu92J4SCfYLgqhLRu8MFa8VUOVqtnnVmBDzdaKvXWRfxRp5jue_5C0yn6dMy1teKafVPIDnK5cGiVqaI0GCKwqfVjlRumk7ojG-80D-yLnLAmPUVhj9CurLKLDf89q1PlyCdT95MGGIP2Xtz5V5_Fqrqrtj-8FxRyP0atIHgzZhApdoBOydn4DkcKqMs6BPVh_fdAtvhxsY7st1XNLW"/>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-center bg-surface-container-lowest border-l-2 border-secondary-container">
+<h4 class="font-headline-sm text-[20px] text-on-surface mb-1">Kanak Bhawan</h4>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">The 'Golden Palace', renowned for its exquisite deities of Sita-Rama and intricate artistry.</p>
+</div>
+</article>
+</div>
+<!-- Browse All Button -->
+<button class="w-full py-4 px-6 rounded-full border border-secondary text-secondary font-label-caps text-label-caps hover:bg-secondary/5 active:bg-secondary/10 transition-colors flex items-center justify-center gap-2 mt-4">
+            View All Landmarks
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</main>

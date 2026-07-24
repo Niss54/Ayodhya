@@ -122,7 +122,9 @@
 
   document.addEventListener('click', (event) => {
     const element = event.target.closest('a, button');
-    const route = element && routeFor(element);
+    if (!element) return;
+    if (element.tagName === 'A' && element.hasAttribute('href') && /^(http|https|mailto:|tel:)/i.test(element.getAttribute('href'))) return;
+    const route = routeFor(element);
     if (!route) return;
     event.preventDefault();
     window.location.assign(route);

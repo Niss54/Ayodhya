@@ -47,7 +47,36 @@ const dictionary = {
     "Book Now": "अभी बुक करें",
     "Luxury Stays": "लक्ज़री ठहरना",
     "Car Rental": "कार रेंटल",
-    "Girls Hostel": "गर्ल्स हॉस्टल"
+    "Girls Hostel": "गर्ल्स हॉस्टल",
+
+    // Destinations Page
+    "Sacred Sites": "पवित्र स्थल",
+    "Explore the": "अन्वेषण करें",
+    "Divine Heritage": "दिव्य विरासत",
+    "Discover the timeless temples, serene ghats, and spiritual landmarks of Ayodhya. Learn about their history and book a taxi to visit them instantly.": "अयोध्या के शाश्वत मंदिरों, शांत घाटों और आध्यात्मिक स्थलों की खोज करें। उनके इतिहास के बारे में जानें और उन्हें तुरंत देखने के लिए टैक्सी बुक करें।",
+    "Shri Ram Janmabhoomi Temple": "श्री राम जन्मभूमि मंदिर",
+    "The sacred birthplace of Lord Rama, featuring magnificent traditional architecture and deep spiritual resonance. Experience the ultimate devotion at this highly revered site.": "भगवान राम का पवित्र जन्मस्थान, जिसमें शानदार पारंपरिक वास्तुकला और गहरी आध्यात्मिक गूंज है। इस अत्यधिक पूजनीय स्थल पर परम भक्ति का अनुभव करें।",
+    "Ramkot": "रामकोट",
+    "Book Taxi to Visit": "टैक्सी बुक करें",
+    "Hanuman Garhi": "हनुमान गढ़ी",
+    "A historic 10th-century temple dedicated to Lord Hanuman. Situated on a mound, it is customary to visit this fortress temple before seeking darshan at the Ram Janmabhoomi.": "भगवान हनुमान को समर्पित 10वीं शताब्दी का एक ऐतिहासिक मंदिर। एक टीले पर स्थित, राम जन्मभूमि में दर्शन करने से पहले इस किले नुमा मंदिर के दर्शन करने की प्रथा है।",
+    "Sai Nagar": "साईं नगर",
+    "Saryu Ghat & Ram Ki Paidi": "सरयू घाट और राम की पैड़ी",
+    "The sacred riverbanks where devotees take a holy dip. It comes alive during the mesmerizing evening Maha Aarti with hundreds of glowing diyas creating a mystical atmosphere.": "पवित्र नदी के तट जहां भक्त पवित्र डुबकी लगाते हैं। यह शाम की मनमोहक महा आरती के दौरान सैकड़ों चमकते दीयों के साथ एक रहस्यमय माहौल बनाता है।",
+    "Naya Ghat": "नया घाट",
+    "River Front": "रिवर फ्रंट",
+    "Kanak Bhawan": "कनक भवन",
+    "The 'Golden Palace' gifted to Goddess Sita by Kaikeyi. It is renowned for its exquisite deities of Sita-Rama, ornate gold-detailed architecture, and continuous devotional music.": "कैकेयी द्वारा देवी सीता को उपहार में दिया गया 'स्वर्ण महल'। यह सीता-राम के उत्कृष्ट देवताओं, अलंकृत सोने-विस्तृत वास्तुकला और निरंतर भक्ति संगीत के लिए प्रसिद्ध है।",
+    "Tulsi Nagar": "तुलसी नगर",
+    "Nageshwarnath Temple": "नागेश्वरनाथ मंदिर",
+    "Established by Kush (Lord Rama's son), this ancient Shiva temple survived through eras and is a focal point of Ayodhya's vibrant Mahashivaratri celebrations.": "कुश (भगवान राम के पुत्र) द्वारा स्थापित, यह प्राचीन शिव मंदिर युगों तक जीवित रहा और अयोध्या के जीवंत महाशिवरात्रि समारोहों का केंद्र बिंदु है।",
+    "Guptar Ghat": "गुप्तार घाट",
+    "A deeply revered site on the banks of the Saryu River. It is believed that Lord Rama took Jal Samadhi here to return to his cosmic abode, Vaikuntha.": "सरयू नदी के तट पर एक अत्यधिक पूजनीय स्थल। ऐसा माना जाता है कि भगवान राम ने अपने लौकिक निवास, वैकुंठ लौटने के लिए यहां जल समाधि ली थी।",
+    "Cantonment Area": "छावनी क्षेत्र",
+    "Mani Parvat": "मणि पर्वत",
+    "A mystical hillock believed to be a fragment of the Sanjeevani mountain carried by Lord Hanuman. Offers a panoramic view of the entire temple city and lush green surroundings.": "एक रहस्यमय पहाड़ी जिसे भगवान हनुमान द्वारा लाए गए संजीवनी पर्वत का एक टुकड़ा माना जाता है। पूरे मंदिर शहर और हरे-भरे परिवेश का मनोरम दृश्य प्रस्तुत करता है।",
+    "Kami Ganj": "कामी गंज",
+    "Must Visit": "जरूर देखें"
 };
 
 // Function to recursively translate text nodes
