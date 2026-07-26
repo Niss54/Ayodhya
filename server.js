@@ -10,11 +10,21 @@ const contentTypes = {
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
-  '.svg': 'image/svg+xml'
+  '.svg': 'image/svg+xml',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
+  '.ico': 'image/x-icon'
 };
 
 http.createServer((request, response) => {
-  const urlPath = request.url === '/' ? '/index.html' : decodeURIComponent(request.url.split('?')[0]);
+  let urlPath = decodeURIComponent(request.url.split('?')[0]);
+
+  // 301 Redirect: root to home page (SEO-friendly server-side redirect)
+  if (urlPath === '/') {
+    response.writeHead(301, { 'Location': '/Build/ayodhya_darshan_mobile_home/home.html' });
+    return response.end();
+  }
+
   const requestedPath = path.resolve(root, `.${urlPath}`);
   if (!requestedPath.startsWith(root)) return response.writeHead(403).end('Forbidden');
   fs.readFile(requestedPath, (error, content) => {
