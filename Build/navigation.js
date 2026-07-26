@@ -38,9 +38,12 @@
     html[data-theme="dark"] .text-on-surface, html[data-theme="dark"] .text-on-background { color: #f8eee5 !important; }
     html[data-theme="dark"] .text-on-surface-variant { color: #d9c9bc !important; }
     .site-controls { display: inline-flex; align-items: center; gap: 6px; margin-left: 12px; }
-    .site-theme-toggle, .site-language-select { border: 1px solid rgba(165, 61, 0, .3); border-radius: 999px; background: rgba(255, 255, 255, .72); color: #8b3b00; font: 600 12px Inter, sans-serif; height: 34px; padding: 0 10px; cursor: pointer; }
+    .site-theme-toggle, .site-lang-toggle { border: 1px solid rgba(165, 61, 0, .3); border-radius: 999px; background: rgba(255, 255, 255, .72); color: #8b3b00; font: 600 12px Inter, sans-serif; height: 34px; padding: 0 10px; cursor: pointer; transition: all 0.2s ease; }
     .site-theme-toggle { width: 36px; padding: 0; font-size: 16px; }
-    html[data-theme="dark"] .site-theme-toggle, html[data-theme="dark"] .site-language-select { background: #34251d; color: #ffd8b8; border-color: #785237; }
+    .site-lang-toggle { padding: 0 12px; font-size: 12px; letter-spacing: 0.05em; }
+    .site-lang-toggle:hover, .site-theme-toggle:hover { background: rgba(255, 102, 17, 0.15); border-color: rgba(165, 61, 0, .5); }
+    html[data-theme="dark"] .site-theme-toggle, html[data-theme="dark"] .site-lang-toggle { background: #34251d; color: #ffd8b8; border-color: #785237; }
+    html[data-theme="dark"] .site-lang-toggle:hover, html[data-theme="dark"] .site-theme-toggle:hover { background: #4a3328; border-color: #9a6a4d; }
     .site-bottom-nav { position: fixed; z-index: 100; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: space-around; width: min(680px, calc(100% - 24px)); padding: 9px 12px; border: 1px solid rgba(165, 61, 0, .18); border-radius: 18px; background: rgba(255, 250, 245, .94); box-shadow: 0 -4px 24px rgba(70, 37, 15, .14); backdrop-filter: blur(14px); }
     .site-bottom-nav a { display: flex; min-width: 68px; flex-direction: column; align-items: center; gap: 3px; color: #6f5b4c; font: 600 11px Inter, sans-serif; text-decoration: none; }
     .site-bottom-nav a:hover, .site-bottom-nav a[aria-current="page"] { color: #ad4700; }
@@ -78,14 +81,53 @@
       element.textContent = copy[element.dataset.navLabel];
     });
     document.querySelectorAll('.site-language-select').forEach((select) => { select.value = language; });
+    document.querySelectorAll('.site-lang-toggle').forEach((btn) => {
+      btn.textContent = language === 'hi' ? 'EN' : 'HI';
+      btn.setAttribute('aria-label', language === 'hi' ? 'Switch to English' : 'हिंदी में पढ़ें');
+    });
     localStorage.setItem('ayodhya-language', language);
+  };
+
+  const toggleBlogLanguage = () => {
+    const path = window.location.pathname;
+    const currentLang = localStorage.getItem('ayodhya-language') || 'en';
+    const newLang = currentLang === 'hi' ? 'en' : 'hi';
+    
+    // Check if we're on a blog page
+    if (path.includes('/blog/')) {
+      if (currentLang === 'en' && newLang === 'hi') {
+        // English -> Hindi: redirect to /blog/hi/ version
+        if (path.includes('/blog/hi/')) {
+          // Already on Hindi, just toggle
+        } else {
+          const newPath = path.replace('/blog/', '/blog/hi/');
+          localStorage.setItem('ayodhya-language', newLang);
+          window.location.assign(newPath);
+          return;
+        }
+      } else if (currentLang === 'hi' && newLang === 'en') {
+        // Hindi -> English: redirect back to /blog/ version
+        if (path.includes('/blog/hi/')) {
+          const newPath = path.replace('/blog/hi/', '/blog/');
+          localStorage.setItem('ayodhya-language', newLang);
+          window.location.assign(newPath);
+          return;
+        }
+      }
+    }
+    
+    applyLanguage(newLang);
   };
 
   const createControls = () => {
     const controls = document.createElement('div');
     controls.className = 'site-controls';
-    controls.innerHTML = '<button class="site-theme-toggle" type="button" aria-label="Switch to dark mode">\u263e</button>';
+    const currentLang = localStorage.getItem('ayodhya-language') || 'en';
+    const langLabel = currentLang === 'hi' ? 'EN' : 'HI';
+    const langAriaLabel = currentLang === 'hi' ? 'Switch to English' : 'हिंदी में पढ़ें';
+    controls.innerHTML = '<button class="site-theme-toggle" type="button" aria-label="Switch to dark mode">\u263e</button><button class="site-lang-toggle" type="button" aria-label="' + langAriaLabel + '">' + langLabel + '</button>';
     controls.querySelector('.site-theme-toggle').addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    controls.querySelector('.site-lang-toggle').addEventListener('click', () => toggleBlogLanguage());
     return controls;
   };
 
@@ -95,7 +137,22 @@
   };
 
   document.querySelectorAll('header, nav').forEach((element) => {
-    if (isTopBar(element)) element.appendChild(createControls());
+    if (isTopBar(element)) {
+      const controls = createControls();
+      // Try to find "Plan Your Visit" or similar button to insert before
+      const planBtn = Array.from(element.querySelectorAll('a, button')).find(el => el.textContent.includes('Plan Your Visit') || el.textContent.includes('Book'));
+      
+      if (planBtn) {
+        // Find if planBtn is inside a flex container at the end of the header
+        planBtn.parentNode.insertBefore(controls, planBtn);
+        // Add some margin or flex classes to controls if needed
+        controls.style.display = 'inline-flex';
+        controls.style.alignItems = 'center';
+        controls.style.marginRight = '8px';
+      } else {
+        element.appendChild(controls);
+      }
+    }
   });
 
   document.querySelectorAll('nav, div').forEach((element) => {
@@ -123,7 +180,19 @@
   document.addEventListener('click', (event) => {
     const element = event.target.closest('a, button');
     if (!element) return;
-    if (element.tagName === 'A' && element.hasAttribute('href') && /^(http|https|mailto:|tel:)/i.test(element.getAttribute('href'))) return;
+    
+    // Let normal links behave normally if they have a real path (not empty, not #)
+    if (element.tagName === 'A' && element.hasAttribute('href')) {
+      const href = element.getAttribute('href');
+      // Don't hijack external links
+      if (/^(http|https|mailto:|tel:)/i.test(href)) return;
+      // Don't hijack real internal routes like /blog/..., /contact/, /ayodhya-sightseeing/ etc.
+      // Hijack only if it's "#" or a legacy Build/ path
+      if (href !== '#' && !href.startsWith('/Build/')) {
+        return; // Let the browser handle the valid internal link normally
+      }
+    }
+
     const route = routeFor(element);
     if (!route) return;
     event.preventDefault();
@@ -135,6 +204,8 @@
     if (route) link.href = route;
   });
 
+  // Auto-detect language from URL for blog pages
+  const detectedLang = window.location.pathname.includes('/blog/hi/') ? 'hi' : (localStorage.getItem('ayodhya-language') || 'en');
   applyTheme(localStorage.getItem('ayodhya-theme') || 'light');
-  applyLanguage(localStorage.getItem('ayodhya-language') || 'en');
+  applyLanguage(detectedLang);
 })();
