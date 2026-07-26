@@ -30,6 +30,18 @@ http.createServer((request, response) => {
     '/girls-hostel-ayodhya/': '/Build/girls_hostel_mobile/girls-hostel-mobile.html',
     '/reviews/': '/Build/reviews_mobile/reviews_mobile.html',
     '/blog/': '/Build/blog/blog.html',
+    '/blog/ram-mandir-darshan-guide/': '/Build/blog/ram-mandir-darshan-guide.html',
+    '/blog/sugam-darshan-pass-guide/': '/Build/blog/sugam-darshan-pass-guide.html',
+    '/blog/best-time-to-visit-ayodhya/': '/Build/blog/best-time-to-visit-ayodhya.html',
+    '/blog/ayodhya-varanasi-prayagraj-tour/': '/Build/blog/ayodhya-varanasi-prayagraj-tour.html',
+    '/blog/deepotsav-ayodhya-2025/': '/Build/blog/deepotsav-ayodhya-2025.html',
+    '/blog/ram-navami-ayodhya-2026/': '/Build/blog/ram-navami-ayodhya-2026.html',
+    '/blog/ayodhya-taxi-rates/': '/Build/blog/ayodhya-taxi-rates.html',
+    '/blog/places-to-visit-ayodhya/': '/Build/blog/places-to-visit-ayodhya.html',
+    '/blog/ayodhya-mathura-vrindavan-tour/': '/Build/blog/ayodhya-mathura-vrindavan-tour.html',
+    '/blog/girls-hostel-ayodhya-guide/': '/Build/blog/girls-hostel-ayodhya-guide.html',
+    '/blog/how-to-reach-ayodhya/': '/Build/blog/how-to-reach-ayodhya.html',
+    '/blog/ayodhya-hotel-booking-guide/': '/Build/blog/ayodhya-hotel-booking-guide.html',
     '/': '/Build/ayodhya_darshan_mobile_home/home.html'
   };
 
@@ -44,12 +56,8 @@ http.createServer((request, response) => {
     return response.end();
   }
 
-  // Rewrite clean URL to physical file path if it matches, or fall back to / if it's exactly /
+  // Rewrite clean URL to physical file path
   if (routeMap[urlPath]) {
-    if (urlPath === '/') {
-       // Optional: Redirect / to actual home if they want a clean home URL, but we will leave / as is and serve home.html
-       // Wait, usually the root is just served directly.
-    }
     urlPath = routeMap[urlPath];
   }
 
