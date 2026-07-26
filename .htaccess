@@ -3,8 +3,30 @@
 
 RewriteEngine On
 
-# 301 Redirect root to home page
-RewriteRule ^$ /Build/ayodhya_darshan_mobile_home/home.html [R=301,L]
+# 301 Redirect old /Build paths to clean URLs
+RewriteRule ^Build/car_rental_mobile/carrental\.html$ /ayodhya-taxi-service/ [R=301,L]
+RewriteRule ^Build/tour_packages_mobile/tour_packages_mobile\.html$ /ayodhya-tour-packages/ [R=301,L]
+RewriteRule ^Build/tour_guides_mobile/tour_guides_mobile\.html$ /ayodhya-local-guides/ [R=301,L]
+RewriteRule ^Build/hotels_rooms_mobile/hotels_rooms_mobile\.html$ /hotels-in-ayodhya/ [R=301,L]
+RewriteRule ^Build/destinations_mobile/destinations_mobile\.html$ /ayodhya-sightseeing/ [R=301,L]
+RewriteRule ^Build/contact_mobile/contact-mobile\.html$ /contact/ [R=301,L]
+RewriteRule ^Build/girls_hostel_mobile/girls-hostel-mobile\.html$ /girls-hostel-ayodhya/ [R=301,L]
+RewriteRule ^Build/reviews_mobile/reviews_mobile\.html$ /reviews/ [R=301,L]
+RewriteRule ^Build/blog/blog\.html$ /blog/ [R=301,L]
+
+# Silently serve HTML files for clean URLs
+RewriteRule ^ayodhya-taxi-service/?$ Build/car_rental_mobile/carrental.html [L]
+RewriteRule ^ayodhya-tour-packages/?$ Build/tour_packages_mobile/tour_packages_mobile.html [L]
+RewriteRule ^ayodhya-local-guides/?$ Build/tour_guides_mobile/tour_guides_mobile.html [L]
+RewriteRule ^hotels-in-ayodhya/?$ Build/hotels_rooms_mobile/hotels_rooms_mobile.html [L]
+RewriteRule ^ayodhya-sightseeing/?$ Build/destinations_mobile/destinations_mobile.html [L]
+RewriteRule ^contact/?$ Build/contact_mobile/contact-mobile.html [L]
+RewriteRule ^girls-hostel-ayodhya/?$ Build/girls_hostel_mobile/girls-hostel-mobile.html [L]
+RewriteRule ^reviews/?$ Build/reviews_mobile/reviews_mobile.html [L]
+RewriteRule ^blog/?$ Build/blog/blog.html [L]
+
+# 301 Redirect root to home page file (or serve silently if preferred)
+RewriteRule ^$ Build/ayodhya_darshan_mobile_home/home.html [L]
 
 # Cache static assets
 <IfModule mod_expires.c>

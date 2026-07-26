@@ -19,10 +19,38 @@ const contentTypes = {
 http.createServer((request, response) => {
   let urlPath = decodeURIComponent(request.url.split('?')[0]);
 
-  // 301 Redirect: root to home page (SEO-friendly server-side redirect)
-  if (urlPath === '/') {
-    response.writeHead(301, { 'Location': '/Build/ayodhya_darshan_mobile_home/home.html' });
+  // SEO URL mapping
+  const routeMap = {
+    '/ayodhya-taxi-service/': '/Build/car_rental_mobile/carrental.html',
+    '/ayodhya-tour-packages/': '/Build/tour_packages_mobile/tour_packages_mobile.html',
+    '/ayodhya-local-guides/': '/Build/tour_guides_mobile/tour_guides_mobile.html',
+    '/hotels-in-ayodhya/': '/Build/hotels_rooms_mobile/hotels_rooms_mobile.html',
+    '/ayodhya-sightseeing/': '/Build/destinations_mobile/destinations_mobile.html',
+    '/contact/': '/Build/contact_mobile/contact-mobile.html',
+    '/girls-hostel-ayodhya/': '/Build/girls_hostel_mobile/girls-hostel-mobile.html',
+    '/reviews/': '/Build/reviews_mobile/reviews_mobile.html',
+    '/blog/': '/Build/blog/blog.html',
+    '/': '/Build/ayodhya_darshan_mobile_home/home.html'
+  };
+
+  // 301 Redirect old /Build/ paths to new clean URLs
+  const invertedRouteMap = Object.entries(routeMap).reduce((acc, [clean, physical]) => {
+    acc[physical] = clean;
+    return acc;
+  }, {});
+  
+  if (invertedRouteMap[urlPath] && urlPath !== '/') {
+    response.writeHead(301, { 'Location': invertedRouteMap[urlPath] });
     return response.end();
+  }
+
+  // Rewrite clean URL to physical file path if it matches, or fall back to / if it's exactly /
+  if (routeMap[urlPath]) {
+    if (urlPath === '/') {
+       // Optional: Redirect / to actual home if they want a clean home URL, but we will leave / as is and serve home.html
+       // Wait, usually the root is just served directly.
+    }
+    urlPath = routeMap[urlPath];
   }
 
   const requestedPath = path.resolve(root, `.${urlPath}`);
