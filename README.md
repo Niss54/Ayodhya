@@ -26,8 +26,6 @@
 * **Mobile-First Excellence:** Crafted primarily for mobile users with bottom-floating navigation pills and touch-friendly UI components, gracefully expanding into a rich, full-width desktop experience.
 * **Glassmorphism Aesthetic:** Extensive use of `backdrop-blur`, subtle borders, and semi-transparent surfaces to create a highly premium, modern interface.
 
----
-
 ## 2. Technical Architecture
 
 The project follows a lightweight, client-heavy architecture focusing on extreme performance, SEO friendliness, and zero-dependency runtime without heavy frameworks like React or Angular.
@@ -50,8 +48,6 @@ The project follows a lightweight, client-heavy architecture focusing on extreme
 
 3. **`server.js` (Local Dev Server)**
    * A minimalist Node.js HTTP server configured to properly serve static assets and handle MIME types (HTML, JS, CSS, PNG, JPG).
-
----
 
 ## 3. Directory Structure
 
@@ -77,7 +73,6 @@ Ayodhya/
         └── tour_packages_mobile.html
 ```
 
----
 
 ## 4. UI/UX Philosophy
 
@@ -85,7 +80,7 @@ Ayodhya/
 * **Typography:** Large, readable display fonts for headers with generous line-heights, paired with highly legible body text.
 * **Micro-interactions:** Subtle hover states, smooth transitions, and CSS shimmer effects on primary action buttons.
 
----
+
 
 ## 5. How to Run Locally
 
