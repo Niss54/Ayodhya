@@ -14,8 +14,6 @@
 
 </div>
 
----
-
 ## 1. Project Overview
 
 **Ayodhya Mahakaal** is a modern, highly responsive, and optimized web platform designed to facilitate spiritual tourism in Ayodhya. The platform bridges the gap between pilgrims and premium travel services, offering seamless exploration of destinations, expert local guides, luxury stays, and curated tour packages.
@@ -95,7 +93,6 @@ Ayodhya/
    http://localhost:4173/Build/ayodhya_darshan_mobile_home/home.html
    ```
 
----
 <div align="center">
   <i>Built with devotion and modern web technologies.</i>
 </div>
