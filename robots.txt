@@ -2,7 +2,6 @@
 User-agent: *
 Allow: /
 Disallow: /node_modules/
-Disallow: /*.js$
 
 # Sitemap
 Sitemap: https://mahakaltourstravel.in/sitemap.xml
