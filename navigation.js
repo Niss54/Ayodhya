@@ -84,7 +84,6 @@
       .site-bottom-nav a { display: flex; min-width: 68px; flex-direction: column; align-items: center; gap: 3px; color: #6f5b4c; font: 600 11px Inter, sans-serif; text-decoration: none; }
       .site-bottom-nav a:hover, .site-bottom-nav a[aria-current="page"] { color: #ad4700; }
       .site-bottom-nav .material-symbols-outlined { font-size: 23px; }
-      .site-legacy-bottom-nav { display: none !important; }
       body { padding-bottom: 96px !important; }
       html[data-theme="dark"] .site-bottom-nav { background: rgba(41, 29, 22, .95); border-color: #785237; box-shadow: 0 -4px 24px rgba(0, 0, 0, .35); }
       html[data-theme="dark"] .site-bottom-nav a { color: #dec8b7; }
@@ -151,12 +150,7 @@
       }
     });
 
-    document.querySelectorAll('nav, div').forEach((element) => {
-      const classes = element.className || '';
-      if (typeof classes === 'string' && /fixed/.test(classes) && /bottom-0|bottom-\d/.test(classes) && /home|tour|guide|room|contact/i.test(element.textContent || '')) {
-        element.classList.add('site-legacy-bottom-nav');
-      }
-    });
+
 
     const activeRoute = window.location.pathname;
     const bottomNav = document.createElement('nav');
