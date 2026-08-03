@@ -29,41 +29,7 @@
     hi: { home: '\u0939\u094b\u092e', tours: '\u091f\u0942\u0930', guides: '\u0917\u093e\u0907\u0921', rooms: '\u0930\u0942\u092e', contact: '\u0938\u0902\u092a\u0930\u094d\u0915' }
   };
 
-  const style = document.createElement('style');
-  style.textContent = `
-    html[data-theme="dark"] { color-scheme: dark; }
-    html[data-theme="dark"] body { background: #18120e !important; color: #f8eee5 !important; }
-    html[data-theme="dark"] .bg-background, html[data-theme="dark"] .bg-surface, html[data-theme="dark"] .bg-surface\\/90, html[data-theme="dark"] .bg-surface\\/80 { background-color: #211914 !important; }
-    html[data-theme="dark"] .bg-surface-container-lowest, html[data-theme="dark"] .bg-surface-container-low, html[data-theme="dark"] .bg-surface-container, html[data-theme="dark"] .bg-surface-container-high, html[data-theme="dark"] .bg-surface-container-highest, html[data-theme="dark"] .bg-white { background-color: #2a1f18 !important; }
-    html[data-theme="dark"] .text-on-surface, html[data-theme="dark"] .text-on-background { color: #f8eee5 !important; }
-    html[data-theme="dark"] .text-on-surface-variant { color: #d9c9bc !important; }
-    .site-controls { display: inline-flex; align-items: center; gap: 6px; margin-left: 12px; }
-    .site-theme-toggle, .site-lang-toggle { border: 1px solid rgba(165, 61, 0, .3); border-radius: 999px; background: rgba(255, 255, 255, .72); color: #8b3b00; font: 600 12px Inter, sans-serif; height: 34px; padding: 0 10px; cursor: pointer; transition: all 0.2s ease; }
-    .site-theme-toggle { width: 36px; padding: 0; font-size: 16px; }
-    .site-lang-toggle { padding: 0 12px; font-size: 12px; letter-spacing: 0.05em; }
-    .site-lang-toggle:hover, .site-theme-toggle:hover { background: rgba(255, 102, 17, 0.15); border-color: rgba(165, 61, 0, .5); }
-    html[data-theme="dark"] .site-theme-toggle, html[data-theme="dark"] .site-lang-toggle { background: #34251d; color: #ffd8b8; border-color: #785237; }
-    html[data-theme="dark"] .site-lang-toggle:hover, html[data-theme="dark"] .site-theme-toggle:hover { background: #4a3328; border-color: #9a6a4d; }
-    .site-bottom-nav { position: fixed; z-index: 100; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: space-around; width: min(680px, calc(100% - 24px)); padding: 9px 12px; border: 1px solid rgba(165, 61, 0, .18); border-radius: 18px; background: rgba(255, 250, 245, .94); box-shadow: 0 -4px 24px rgba(70, 37, 15, .14); backdrop-filter: blur(14px); }
-    .site-bottom-nav a { display: flex; min-width: 68px; flex-direction: column; align-items: center; gap: 3px; color: #6f5b4c; font: 600 11px Inter, sans-serif; text-decoration: none; }
-    .site-bottom-nav a:hover, .site-bottom-nav a[aria-current="page"] { color: #ad4700; }
-    .site-bottom-nav .material-symbols-outlined { font-size: 23px; }
-    .site-legacy-bottom-nav { display: none !important; }
-    body { padding-bottom: 96px !important; }
-    html[data-theme="dark"] .site-bottom-nav { background: rgba(41, 29, 22, .95); border-color: #785237; box-shadow: 0 -4px 24px rgba(0, 0, 0, .35); }
-    html[data-theme="dark"] .site-bottom-nav a { color: #dec8b7; }
-    html[data-theme="dark"] .site-bottom-nav a:hover, html[data-theme="dark"] .site-bottom-nav a[aria-current="page"] { color: #ffb982; }
-    @media (max-width: 640px) { .site-controls { gap: 4px; margin-left: 6px; } .site-language-select { width: 48px; padding: 0 5px; } .site-bottom-nav { bottom: 6px; width: calc(100% - 12px); border-radius: 14px; } .site-bottom-nav a { min-width: 46px; font-size: 10px; } }
-  `;
-  document.head.appendChild(style);
-
-  const textFor = (element) => (element.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
-  const routeFor = (element) => {
-    const text = textFor(element);
-    if (/book|plan your visit|reserve|select bed|select room/.test(text)) return routes.contact;
-    return Object.entries(routes).find(([name]) => text === name || text.includes(name))?.[1];
-  };
-
+  // --- SYNCHRONOUS THEME & LANG SETUP (Avoids FOUC) ---
   const applyTheme = (theme) => {
     document.documentElement.dataset.theme = theme;
     document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -88,124 +54,159 @@
     localStorage.setItem('ayodhya-language', language);
   };
 
-  const toggleBlogLanguage = () => {
-    const path = window.location.pathname;
-    const currentLang = localStorage.getItem('ayodhya-language') || 'en';
-    const newLang = currentLang === 'hi' ? 'en' : 'hi';
-    
-    // Check if we're on a blog page
-    if (path.includes('/blog/')) {
-      if (currentLang === 'en' && newLang === 'hi') {
-        // English -> Hindi: redirect to /blog/hi/ version
-        if (path.includes('/blog/hi/')) {
-          // Already on Hindi, just toggle
-        } else {
-          const newPath = path.replace('/blog/', '/blog/hi/');
-          localStorage.setItem('ayodhya-language', newLang);
-          window.location.assign(newPath);
-          return;
-        }
-      } else if (currentLang === 'hi' && newLang === 'en') {
-        // Hindi -> English: redirect back to /blog/ version
-        if (path.includes('/blog/hi/')) {
-          const newPath = path.replace('/blog/hi/', '/blog/');
-          localStorage.setItem('ayodhya-language', newLang);
-          window.location.assign(newPath);
-          return;
-        }
-      }
-    }
-    
-    applyLanguage(newLang);
-  };
-
-  const createControls = () => {
-    const controls = document.createElement('div');
-    controls.className = 'site-controls';
-    const currentLang = localStorage.getItem('ayodhya-language') || 'en';
-    const langLabel = currentLang === 'hi' ? 'EN' : 'HI';
-    const langAriaLabel = currentLang === 'hi' ? 'Switch to English' : 'हिंदी में पढ़ें';
-    controls.innerHTML = '<button class="site-theme-toggle" type="button" aria-label="Switch to dark mode">\u263e</button><button class="site-lang-toggle" type="button" aria-label="' + langAriaLabel + '">' + langLabel + '</button>';
-    controls.querySelector('.site-theme-toggle').addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
-    controls.querySelector('.site-lang-toggle').addEventListener('click', () => toggleBlogLanguage());
-    return controls;
-  };
-
-  const isTopBar = (element) => {
-    const classes = element.className || '';
-    return typeof classes === 'string' && /(fixed|sticky)/.test(classes) && !/bottom-0|bottom-\d/.test(classes);
-  };
-
-  document.querySelectorAll('header, nav').forEach((element) => {
-    if (isTopBar(element)) {
-      const controls = createControls();
-      // Try to find "Plan Your Visit" or similar button to insert before
-      const planBtn = Array.from(element.querySelectorAll('a, button')).find(el => el.textContent.includes('Plan Your Visit') || el.textContent.includes('Book'));
-      
-      if (planBtn) {
-        // Find if planBtn is inside a flex container at the end of the header
-        planBtn.parentNode.insertBefore(controls, planBtn);
-        // Add some margin or flex classes to controls if needed
-        controls.style.display = 'inline-flex';
-        controls.style.alignItems = 'center';
-        controls.style.marginRight = '8px';
-      } else {
-        element.appendChild(controls);
-      }
-    }
-  });
-
-  document.querySelectorAll('nav, div').forEach((element) => {
-    const classes = element.className || '';
-    if (typeof classes === 'string' && /fixed/.test(classes) && /bottom-0|bottom-\d/.test(classes) && /home|tour|guide|room|contact/i.test(element.textContent || '')) {
-      element.classList.add('site-legacy-bottom-nav');
-    }
-  });
-
-  const activeRoute = window.location.pathname;
-  const bottomNav = document.createElement('nav');
-  bottomNav.className = 'site-bottom-nav';
-  bottomNav.setAttribute('aria-label', 'Primary navigation');
-  bottomNav.innerHTML = `
-    <a href="${routes.home}" data-route="${routes.home}"><span class="material-symbols-outlined">home</span><span data-nav-label="home">Home</span></a>
-    <a href="${routes.packages}" data-route="${routes.packages}"><span class="material-symbols-outlined">map</span><span data-nav-label="tours">Tours</span></a>
-    <a href="${routes.guides}" data-route="${routes.guides}"><span class="material-symbols-outlined">person_pin_circle</span><span data-nav-label="guides">Guides</span></a>
-    <a href="${routes.hotels}" data-route="${routes.hotels}"><span class="material-symbols-outlined">hotel</span><span data-nav-label="rooms">Rooms</span></a>
-    <a href="${routes.contact}" data-route="${routes.contact}"><span class="material-symbols-outlined">chat</span><span data-nav-label="contact">Contact</span></a>`;
-  bottomNav.querySelectorAll('a').forEach((link) => {
-    if (link.dataset.route === activeRoute) link.setAttribute('aria-current', 'page');
-  });
-  document.body.appendChild(bottomNav);
-
-  document.addEventListener('click', (event) => {
-    const element = event.target.closest('a, button');
-    if (!element) return;
-    
-    // Let normal links behave normally if they have a real path (not empty, not #)
-    if (element.tagName === 'A' && element.hasAttribute('href')) {
-      const href = element.getAttribute('href');
-      // Don't hijack external links
-      if (/^(http|https|mailto:|tel:)/i.test(href)) return;
-      // Don't hijack real internal routes like /blog/..., /contact/, /ayodhya-sightseeing/ etc.
-      // Hijack only if it's "#" or a legacy Build/ path
-      if (href !== '#' && !href.startsWith('/Build/')) {
-        return; // Let the browser handle the valid internal link normally
-      }
-    }
-
-    const route = routeFor(element);
-    if (!route) return;
-    event.preventDefault();
-    window.location.assign(route);
-  });
-
-  document.querySelectorAll('a[href="#"]').forEach((link) => {
-    const route = routeFor(link);
-    if (route) link.href = route;
-  });
-
-  // Auto-detect language from URL for blog pages
   const detectedLang = window.location.pathname.includes('/blog/hi/') ? 'hi' : (localStorage.getItem('ayodhya-language') || 'en');
   applyTheme(localStorage.getItem('ayodhya-theme') || 'light');
-  applyLanguage(detectedLang);
+  
+  // Set lang attribute synchronously on html
+  document.documentElement.lang = detectedLang === 'hi' ? 'hi' : 'en';
+  // ----------------------------------------------------
+
+  // --- DOM DEPENDENT SETUP ---
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    // Create styles for site controls and bottom nav
+    const style = document.createElement('style');
+    style.textContent = `
+      html[data-theme="dark"] { color-scheme: dark; }
+      html[data-theme="dark"] body { background: #18120e !important; color: #f8eee5 !important; }
+      html[data-theme="dark"] .bg-background, html[data-theme="dark"] .bg-surface, html[data-theme="dark"] .bg-surface\\/90, html[data-theme="dark"] .bg-surface\\/80 { background-color: #211914 !important; }
+      html[data-theme="dark"] .bg-surface-container-lowest, html[data-theme="dark"] .bg-surface-container-low, html[data-theme="dark"] .bg-surface-container, html[data-theme="dark"] .bg-surface-container-high, html[data-theme="dark"] .bg-surface-container-highest, html[data-theme="dark"] .bg-white { background-color: #2a1f18 !important; }
+      html[data-theme="dark"] .text-on-surface, html[data-theme="dark"] .text-on-background { color: #f8eee5 !important; }
+      html[data-theme="dark"] .text-on-surface-variant { color: #d9c9bc !important; }
+      .site-controls { display: inline-flex; align-items: center; gap: 6px; margin-left: 12px; }
+      .site-theme-toggle, .site-lang-toggle { border: 1px solid rgba(165, 61, 0, .3); border-radius: 999px; background: rgba(255, 255, 255, .72); color: #8b3b00; font: 600 12px Inter, sans-serif; height: 34px; padding: 0 10px; cursor: pointer; transition: all 0.2s ease; }
+      .site-theme-toggle { width: 36px; padding: 0; font-size: 16px; }
+      .site-lang-toggle { padding: 0 12px; font-size: 12px; letter-spacing: 0.05em; }
+      .site-lang-toggle:hover, .site-theme-toggle:hover { background: rgba(255, 102, 17, 0.15); border-color: rgba(165, 61, 0, .5); }
+      html[data-theme="dark"] .site-theme-toggle, html[data-theme="dark"] .site-lang-toggle { background: #34251d; color: #ffd8b8; border-color: #785237; }
+      html[data-theme="dark"] .site-lang-toggle:hover, html[data-theme="dark"] .site-theme-toggle:hover { background: #4a3328; border-color: #9a6a4d; }
+      .site-bottom-nav { position: fixed; z-index: 100; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: space-around; width: min(680px, calc(100% - 24px)); padding: 9px 12px; border: 1px solid rgba(165, 61, 0, .18); border-radius: 18px; background: rgba(255, 250, 245, .94); box-shadow: 0 -4px 24px rgba(70, 37, 15, .14); backdrop-filter: blur(14px); }
+      .site-bottom-nav a { display: flex; min-width: 68px; flex-direction: column; align-items: center; gap: 3px; color: #6f5b4c; font: 600 11px Inter, sans-serif; text-decoration: none; }
+      .site-bottom-nav a:hover, .site-bottom-nav a[aria-current="page"] { color: #ad4700; }
+      .site-bottom-nav .material-symbols-outlined { font-size: 23px; }
+      .site-legacy-bottom-nav { display: none !important; }
+      body { padding-bottom: 96px !important; }
+      html[data-theme="dark"] .site-bottom-nav { background: rgba(41, 29, 22, .95); border-color: #785237; box-shadow: 0 -4px 24px rgba(0, 0, 0, .35); }
+      html[data-theme="dark"] .site-bottom-nav a { color: #dec8b7; }
+      html[data-theme="dark"] .site-bottom-nav a:hover, html[data-theme="dark"] .site-bottom-nav a[aria-current="page"] { color: #ffb982; }
+      @media (max-width: 640px) { .site-controls { gap: 4px; margin-left: 6px; } .site-language-select { width: 48px; padding: 0 5px; } .site-bottom-nav { bottom: 6px; width: calc(100% - 12px); border-radius: 14px; } .site-bottom-nav a { min-width: 46px; font-size: 10px; } }
+    `;
+    document.head.appendChild(style);
+
+    const toggleBlogLanguage = () => {
+      const path = window.location.pathname;
+      const currentLang = localStorage.getItem('ayodhya-language') || 'en';
+      const newLang = currentLang === 'hi' ? 'en' : 'hi';
+      
+      if (path.includes('/blog/')) {
+        if (currentLang === 'en' && newLang === 'hi') {
+          if (!path.includes('/blog/hi/')) {
+            const newPath = path.replace('/blog/', '/blog/hi/');
+            localStorage.setItem('ayodhya-language', newLang);
+            window.location.assign(newPath);
+            return;
+          }
+        } else if (currentLang === 'hi' && newLang === 'en') {
+          if (path.includes('/blog/hi/')) {
+            const newPath = path.replace('/blog/hi/', '/blog/');
+            localStorage.setItem('ayodhya-language', newLang);
+            window.location.assign(newPath);
+            return;
+          }
+        }
+      }
+      applyLanguage(newLang);
+    };
+
+    const createControls = () => {
+      const controls = document.createElement('div');
+      controls.className = 'site-controls';
+      const currentLang = localStorage.getItem('ayodhya-language') || 'en';
+      const langLabel = currentLang === 'hi' ? 'EN' : 'HI';
+      const langAriaLabel = currentLang === 'hi' ? 'Switch to English' : 'हिंदी में पढ़ें';
+      controls.innerHTML = '<button class="site-theme-toggle" type="button" aria-label="Switch to dark mode">\u263e</button><button class="site-lang-toggle" type="button" aria-label="' + langAriaLabel + '">' + langLabel + '</button>';
+      controls.querySelector('.site-theme-toggle').addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+      controls.querySelector('.site-lang-toggle').addEventListener('click', () => toggleBlogLanguage());
+      return controls;
+    };
+
+    const isTopBar = (element) => {
+      const classes = element.className || '';
+      return typeof classes === 'string' && /(fixed|sticky)/.test(classes) && !/bottom-0|bottom-\d/.test(classes);
+    };
+
+    document.querySelectorAll('header, nav').forEach((element) => {
+      if (isTopBar(element)) {
+        const controls = createControls();
+        const planBtn = Array.from(element.querySelectorAll('a, button')).find(el => el.textContent.includes('Plan Your Visit') || el.textContent.includes('Book'));
+        
+        if (planBtn) {
+          planBtn.parentNode.insertBefore(controls, planBtn);
+          controls.style.display = 'inline-flex';
+          controls.style.alignItems = 'center';
+          controls.style.marginRight = '8px';
+        } else {
+          element.appendChild(controls);
+        }
+      }
+    });
+
+    document.querySelectorAll('nav, div').forEach((element) => {
+      const classes = element.className || '';
+      if (typeof classes === 'string' && /fixed/.test(classes) && /bottom-0|bottom-\d/.test(classes) && /home|tour|guide|room|contact/i.test(element.textContent || '')) {
+        element.classList.add('site-legacy-bottom-nav');
+      }
+    });
+
+    const activeRoute = window.location.pathname;
+    const bottomNav = document.createElement('nav');
+    bottomNav.className = 'site-bottom-nav';
+    bottomNav.setAttribute('aria-label', 'Primary navigation');
+    bottomNav.innerHTML = \`
+      <a href="\${routes.home}" data-route="\${routes.home}"><span class="material-symbols-outlined">home</span><span data-nav-label="home">Home</span></a>
+      <a href="\${routes.packages}" data-route="\${routes.packages}"><span class="material-symbols-outlined">map</span><span data-nav-label="tours">Tours</span></a>
+      <a href="\${routes.guides}" data-route="\${routes.guides}"><span class="material-symbols-outlined">person_pin_circle</span><span data-nav-label="guides">Guides</span></a>
+      <a href="\${routes.hotels}" data-route="\${routes.hotels}"><span class="material-symbols-outlined">hotel</span><span data-nav-label="rooms">Rooms</span></a>
+      <a href="\${routes.contact}" data-route="\${routes.contact}"><span class="material-symbols-outlined">chat</span><span data-nav-label="contact">Contact</span></a>\`;
+    bottomNav.querySelectorAll('a').forEach((link) => {
+      if (link.dataset.route === activeRoute) link.setAttribute('aria-current', 'page');
+    });
+    document.body.appendChild(bottomNav);
+
+    const textFor = (element) => (element.textContent || '').replace(/\\s+/g, ' ').trim().toLowerCase();
+    const routeFor = (element) => {
+      const text = textFor(element);
+      if (/book|plan your visit|reserve|select bed|select room/.test(text)) return routes.contact;
+      return Object.entries(routes).find(([name]) => text === name || text.includes(name))?.[1];
+    };
+
+    document.addEventListener('click', (event) => {
+      const element = event.target.closest('a, button');
+      if (!element) return;
+      
+      if (element.tagName === 'A' && element.hasAttribute('href')) {
+        const href = element.getAttribute('href');
+        if (/^(http|https|mailto:|tel:)/i.test(href)) return;
+        if (href !== '#' && !href.startsWith('/Build/')) {
+          return; 
+        }
+      }
+
+      const route = routeFor(element);
+      if (!route) return;
+      event.preventDefault();
+      window.location.assign(route);
+    });
+
+    document.querySelectorAll('a[href="#"]').forEach((link) => {
+      const route = routeFor(link);
+      if (route) link.href = route;
+    });
+
+    // Run applyLanguage now that DOM is ready
+    applyLanguage(detectedLang);
+    // Apply theme again just to set button labels
+    applyTheme(localStorage.getItem('ayodhya-theme') || 'light');
+  });
+
 })();

@@ -148,17 +148,7 @@
         .dark .hero-img-light { display: none; }
         .dark .hero-img-dark { display: block; }
     </style>
-<!-- Dark mode detection: applies 'dark' class based on system preference -->
-<script>
-    (function() {
-        const mq = window.matchMedia('(prefers-color-scheme: dark)');
-        function applyTheme(e) {
-            document.documentElement.classList.toggle('dark', e.matches);
-        }
-        applyTheme(mq);
-        mq.addEventListener('change', applyTheme);
-    })();
-</script>
+<script src="/navigation.js"></script>
     <script type="application/ld+json">
     { 
       "@context": "https://schema.org", 
@@ -417,6 +407,5 @@
             });
         });
     </script>
-<script src="/navigation.js"></script>
 <script src="/translations.js"></script>
 </body></html>
