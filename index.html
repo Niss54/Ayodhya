@@ -85,7 +85,9 @@
 <!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Google Fonts: Libre Caslon Text (Headline) & Inter (Body) -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Preload Critical Fonts -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <!-- Tailwind CSS -->
 <link href="/dist/styles.css" rel="stylesheet">
 <style>
@@ -227,7 +229,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 dark:from-black/80 dark:via-black/40 to-transparent"></div>
 </div>
 <div class="relative z-10 flex flex-col items-start text-left gap-6 w-full max-w-container-max mx-auto mt-auto mb-[8vh] px-6 md:px-8">
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface dark:text-white font-bold drop-shadow-2xl max-w-3xl leading-tight" style="font-family: 'Playfair Display', serif; letter-spacing: -0.02em;">Journey to the Eternal City of Lord Ram</h1>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface dark:text-white font-bold drop-shadow-2xl max-w-3xl leading-tight" style=" letter-spacing: -0.02em;">Journey to the Eternal City of Lord Ram</h1>
 <p class="font-body-lg md:text-[20px] text-on-surface-variant dark:text-surface-variant drop-shadow-lg max-w-2xl leading-relaxed">
     Walk the sacred paths of devotion, explore centuries of heritage, and enjoy thoughtfully curated pilgrimages with premium hospitality. Let every visit become a cherished spiritual memory.
 </p>
