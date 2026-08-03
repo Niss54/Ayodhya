@@ -58,7 +58,16 @@ http.createServer((request, response) => {
   function serveFile(filePath) {
     fs.readFile(filePath, (error, content) => {
       if (error) return response.writeHead(500).end('Server error');
-      response.writeHead(200, { 'Content-Type': contentTypes[path.extname(filePath)] || 'application/octet-stream' });
+      
+      const ext = path.extname(filePath);
+      const headers = { 'Content-Type': contentTypes[ext] || 'application/octet-stream' };
+      
+      // Cache assets for 30 days, do not cache HTML
+      if (ext !== '.html') {
+          headers['Cache-Control'] = 'public, max-age=2592000';
+      }
+      
+      response.writeHead(200, headers);
       response.end(content);
     });
   }
