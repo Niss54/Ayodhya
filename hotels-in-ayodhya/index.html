@@ -139,6 +139,7 @@
     ]
     </script>
 
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body class="bg-background text-on-background min-h-screen font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container flex flex-col">
 <!-- TopNavBar (Desktop) - Suppressed visually on mobile, structurally present for semantic rules -->
@@ -440,6 +441,19 @@ function toggleDarkMode() {
 if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
 }
+</script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(registration => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, err => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
 </script>
 
 </body></html>

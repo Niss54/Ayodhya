@@ -1,0 +1,21 @@
+{
+  "name": "Mahakaal Tours Ayodhya",
+  "short_name": "Mahakaal Tours",
+  "description": "Best Ayodhya Tour Packages & Taxi Service",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdfbf7",
+  "theme_color": "#E8690A",
+  "icons": [
+    {
+      "src": "/public/Mahakal.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/public/Mahakal.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
