@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+const fs = require('fs');
+
+const htmlContent = `<!DOCTYPE html>
 <html class="scroll-smooth" lang="en">
 <head>
     <meta charset="utf-8">
@@ -18,7 +20,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
-    <link rel="stylesheet" href="/dist/styles.css?v=1785857331850" />
+    <link rel="stylesheet" href="/dist/styles.css?v=${Date.now()}" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
