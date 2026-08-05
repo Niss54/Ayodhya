@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mahakaal-cache-v1';
+const CACHE_NAME = 'mahakaal-cache-v4';
 const PRECACHE_ASSETS = [
     '/',
     '/dist/styles.css',

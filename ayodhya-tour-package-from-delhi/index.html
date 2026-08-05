@@ -92,20 +92,60 @@
     <link rel="manifest" href="/manifest.json">
 </head>
 <body class="bg-background text-on-background font-sans antialiased min-h-screen flex flex-col pb-24">
-<!-- Mobile Header (Minimal, focused) -->
-<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 px-margin-mobile py-4 flex items-center justify-between md:hidden">
-<h1 class="font-headline-sm text-headline-sm text-primary">Divine Heritage</h1>
-
-<div class="flex items-center gap-2">
-<a href="tel:+919793434313" class="bg-primary text-on-primary px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1 hover:shadow-lg transition-shadow whitespace-nowrap shimmer-bg">
-  <span class="material-symbols-outlined text-[14px]">call</span>
-  Call
+<!-- Unified TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[92%] lg:w-[80%] rounded-full bg-white/20 backdrop-blur-xl dark:bg-black/20 border border-outline-variant/30 dark:border-outline/20 shadow-[0_8px_32px_rgba(255,102,17,0.08)] flex justify-between items-center px-8 py-2 max-w-[1100px] md:hidden">
+<div class="flex flex-col justify-center">
+<a href="/" class="flex items-center gap-3">
+  <img src="/public/Mahakal.png" alt="Mahakaal Tours & Travels Logo" class="h-10 w-auto object-contain">
+  <div class="flex flex-col">
+    <span class="font-headline-sm text-[20px] text-primary dark:text-inverse-primary leading-none" style="font-family: 'Libre Caslon Text', serif;">Mahakaal</span>
+    <span class="font-label-caps text-[10px] text-on-surface-variant dark:text-surface-variant tracking-[0.2em] mt-1" style="font-family: 'Inter', sans-serif;">TOURS & TRAVELS</span>
+  </div>
 </a>
 </div>
+<div class="flex items-center gap-4">
+<a href="tel:+919793434313" class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-1 hover:shadow-lg transition-shadow whitespace-nowrap shimmer-bg">
+  <span class="material-symbols-outlined text-[16px]">call</span>
+  Call
+</a>
+  <button class="mobile-menu-btn text-on-surface p-2 rounded-full hover:bg-surface-container-highest transition-colors flex items-center justify-center border border-outline-variant/30 dark:border-outline/20 bg-white/50 dark:bg-black/50" aria-label="Open Menu" onclick="document.getElementById('mobile-drawer').style.transform = 'translateX(0)'; document.getElementById('mobile-overlay').classList.remove('hidden');">
+    <span class="material-symbols-outlined text-[20px]">menu</span>
+  </button>
+</div>
 </header>
+<header class="hidden md:flex fixed top-0 left-0 right-0 z-50 mx-auto mt-6 w-[92%] lg:w-[80%] rounded-full bg-surface-container-highest/60 backdrop-blur-xl border border-outline-variant/30 shadow-[0_8px_32px_rgba(255,102,17,0.08)] justify-between items-center px-8 py-2 max-w-[1100px] transition-transform duration-300">
+<div class="flex flex-col justify-center">
+<a href="/" class="flex items-center gap-3">
+  <img src="/public/Mahakal.png" alt="Mahakaal Tours & Travels Logo" class="h-10 w-auto object-contain">
+  <div class="flex flex-col">
+    <span class="font-headline-sm text-[20px] text-primary dark:text-inverse-primary leading-none" style="font-family: 'Libre Caslon Text', serif;">Mahakaal</span>
+    <span class="font-label-caps text-[10px] text-on-surface-variant tracking-[0.2em] mt-1" style="font-family: 'Inter', sans-serif;">TOURS & TRAVELS</span>
+  </div>
+</a>
+</div>
+<nav class="flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 font-bold tracking-wide" href="/ayodhya-sightseeing/">Destinations</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 font-bold tracking-wide" href="/ayodhya-tour-packages/">Heritage</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 font-bold tracking-wide" href="/ayodhya-taxi-service/">Taxi Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 font-bold tracking-wide" href="/blog/">Blog</a>
+</nav>
+<div class="flex items-center gap-3">
+  <button class="dark-toggle-btn bg-surface-container/80 text-on-surface p-2 rounded-full hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center border border-outline-variant/30 w-10 h-10 shadow-sm" aria-label="Toggle Dark Mode" onclick="toggleDarkMode()">
+    <span class="material-symbols-outlined text-[18px] dark-icon">light_mode</span>
+  </button>
+  <button class="lang-toggle-btn bg-surface-container/80 text-on-surface p-2 rounded-full hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center border border-outline-variant/30 w-10 h-10 shadow-sm" aria-label="Toggle Language" onclick="toggleLanguage()">
+    <span class="font-bold text-[12px]">HI</span>
+  </button>
+  <a href="/contact/" class="bg-gradient-to-r from-primary to-[#ff8c42] text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps font-bold hover:shadow-[0_4px_15px_rgba(255,102,17,0.4)] transition-all flex items-center justify-center ml-2 border border-primary/50">Plan Your Visit</a>
+</div>
+</header>
+<!-- End Unified TopNavBar -->
+
+<!-- Mobile Header (Minimal, focused) -->
+
 <!-- Main Content Canvas -->
 
-<main class="flex-grow w-full max-w-md mx-auto md:max-w-container-max md:px-margin-desktop md:pt-32 pb-12">
+<main class="flex-grow w-full max-w-md mx-auto md:max-w-container-max md:px-margin-desktop pt-28 md:pt-32 pb-12">
     <section class="px-margin-mobile py-8 md:text-center md:mb-12">
         <div class="inline-block bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full font-label-caps text-sm mb-4">
             Starting from ₹5,499 (flight + package)
@@ -148,17 +188,15 @@
     <a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="/ayodhya-taxi-service/">Taxi Service</a>
     <a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="/contact/">Contact Us</a>
   </div>
-  <p class="font-body-md text-body-md text-on-surface-variant">© 2024–2026 Mahakaal Tours & Travels Ayodhya. All Rights Reserved.</p>
-  <p class="font-body-md text-sm text-on-surface-variant text-center">Near Ram Mandir, Ayodhya, Uttar Pradesh - 224123 | <a href="tel:+919793434313" class="text-primary">+91-9793434313</a></p>
+  <p class="font-body-md text-body-md text-on-surface-variant text-center">&copy; 2025-2026 Mahakaal Tours & Travels. All Rights Reserved.</p>
+  <p class="font-body-md text-sm text-on-surface-variant text-center">Naka Chungi Ayodhya | <a href="tel:+919793434313" class="text-primary">+91-9793434313</a></p>
 
   <div class="flex gap-4 mt-2">
   </div>
 </footer>
 
 <!-- Contextual FAB (WhatsApp) - Visible on Contact screen -->
-<a class="fixed right-6 bottom-24 md:bottom-12 z-40 bg-surface-container-lowest text-primary p-4 rounded-full shadow-[0_8px_24px_rgba(255,102,17,0.2)] hover:scale-105 transition-transform duration-300 border border-outline-variant/30 flex items-center justify-center" href="https://wa.me/919793434313?text=Jai%20Shree%20Ram!%20I%20would%20like%20to%20contact%20you%20for%20some%20details.%20%2F%20%E0%A4%9C%E0%A4%AF%20%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%B0%E0%A4%BE%E0%A4%AE!%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%95%E0%A5%81%E0%A4%9B%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B8%E0%A4%82%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE%20%E0%A4%B9%E0%A5%88%E0%A5%A4" target="_blank">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
-</a>
+
 
 <!-- FAQ Section -->
 <section class="px-margin-mobile py-12 md:max-w-3xl md:mx-auto">
@@ -246,10 +284,6 @@
 
 <!-- Floating Social FABs -->
 <div class="fixed bottom-28 right-4 z-40 flex flex-col gap-4">
-  <!-- Instagram -->
-  <a href="https://www.instagram.com/pawangupta7700" target="_blank" class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);">
-    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.181a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-  </a>
   <!-- WhatsApp -->
   <a href="https://wa.me/919793434313" target="_blank" class="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform bg-[#25D366]">
     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
@@ -282,6 +316,46 @@ if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') 
       });
     });
   }
+</script>
+
+
+
+<!-- Mobile Drawer -->
+<div id="mobile-overlay" class="fixed inset-0 bg-black/50 hidden transition-opacity md:hidden" style="z-index: 60;" onclick="closeMobileMenu()"></div>
+<aside id="mobile-drawer" class="fixed top-0 right-0 h-full w-[280px] bg-surface-container-lowest shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col md:hidden" style="z-index: 70; transform: translateX(100%);">
+    <div class="p-6 border-b border-outline-variant/30 flex justify-between items-center">
+        <span class="font-headline-sm text-primary">Menu</span>
+        <button class="p-2 text-on-surface-variant hover:text-primary transition-colors bg-surface-container-low rounded-full flex items-center justify-center w-10 h-10" onclick="closeMobileMenu()">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <nav class="flex-grow flex flex-col p-6 gap-6 overflow-y-auto">
+        <a href="/" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4"><span class="material-symbols-outlined text-[24px]">home</span>Home</a>
+        <a href="/ayodhya-sightseeing/" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4"><span class="material-symbols-outlined text-[24px]">explore</span>Destinations</a>
+        <a href="/ayodhya-tour-packages/" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4"><span class="material-symbols-outlined text-[24px]">museum</span>Heritage</a>
+        <a href="/ayodhya-taxi-service/" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4"><span class="material-symbols-outlined text-[24px]">local_taxi</span>Taxi Service</a>
+        <a href="/blog/" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4"><span class="material-symbols-outlined text-[24px]">article</span>Blog</a>
+    </nav>
+    <div class="p-6 pb-24 border-t border-outline-variant/30 flex flex-col gap-4 bg-surface-container-lowest">
+        <button class="dark-toggle-btn bg-surface-container text-on-surface px-4 py-3 rounded-xl hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-between border border-outline-variant/30 w-full shadow-sm" aria-label="Toggle Dark Mode" onclick="toggleDarkMode()">
+            <span class="font-label-caps text-sm">Theme</span>
+            <span class="material-symbols-outlined text-[20px] dark-icon">light_mode</span>
+        </button>
+        <button class="lang-toggle-btn bg-surface-container text-on-surface px-4 py-3 rounded-xl hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-between border border-outline-variant/30 w-full shadow-sm" aria-label="Toggle Language" onclick="toggleLanguage && toggleLanguage()">
+            <span class="font-label-caps text-sm">Language</span>
+            <span class="font-bold text-[14px]">EN/HI</span>
+        </button>
+    </div>
+</aside>
+<script>
+    function closeMobileMenu() {
+        const drawer = document.getElementById('mobile-drawer');
+        const overlay = document.getElementById('mobile-overlay');
+        if(drawer && overlay) {
+            drawer.style.transform = 'translateX(100%)';
+            overlay.classList.add('hidden');
+        }
+    }
 </script>
 
 </body></html>

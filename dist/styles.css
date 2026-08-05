@@ -1158,6 +1158,14 @@ select {
   z-index: 50;
 }
 
+.z-\[60\] {
+  z-index: 60;
+}
+
+.z-\[70\] {
+  z-index: 70;
+}
+
 .order-1 {
   order: 1;
 }
@@ -1603,6 +1611,10 @@ select {
   width: 2rem;
 }
 
+.w-\[280px\] {
+  width: 280px;
+}
+
 .w-\[92\%\] {
   width: 92%;
 }
@@ -1798,6 +1810,11 @@ select {
 
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-full {
+  --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2958,10 +2975,6 @@ select {
   border-color: var(--color-surface);
 }
 
-.border-surface-variant {
-  border-color: var(--color-surface-variant);
-}
-
 .border-tertiary {
   border-color: var(--color-tertiary);
 }
@@ -3004,6 +3017,10 @@ select {
 
 .bg-background {
   background-color: var(--color-background);
+}
+
+.bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .bg-blue-500\/10 {
@@ -3095,6 +3112,10 @@ select {
 
 .bg-white\/20 {
   background-color: rgb(255 255 255 / 0.2);
+}
+
+.bg-white\/50 {
+  background-color: rgb(255 255 255 / 0.5);
 }
 
 .bg-yellow-500\/10 {
@@ -3595,10 +3616,6 @@ select {
   padding-bottom: 1rem;
 }
 
-.pb-6 {
-  padding-bottom: 1.5rem;
-}
-
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -3635,6 +3652,10 @@ select {
   padding-top: 6rem;
 }
 
+.pt-28 {
+  padding-top: 7rem;
+}
+
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -3653,6 +3674,10 @@ select {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pt-\[140px\] {
+  padding-top: 140px;
 }
 
 .pt-\[90px\] {
@@ -4415,6 +4440,12 @@ select {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-\[0_4px_16px_rgba\(255\2c 102\2c 17\2c 0\.06\)\] {
   --tw-shadow: 0 4px 16px rgba(255,102,17,0.06);
   --tw-shadow-colored: 0 4px 16px var(--tw-shadow-color);
@@ -4424,12 +4455,6 @@ select {
 .shadow-\[0_4px_20px_rgba\(255\2c 102\2c 17\2c 0\.05\)\] {
   --tw-shadow: 0 4px 20px rgba(255,102,17,0.05);
   --tw-shadow-colored: 0 4px 20px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[0_8px_24px_rgba\(255\2c 102\2c 17\2c 0\.2\)\] {
-  --tw-shadow: 0 8px 24px rgba(255,102,17,0.2);
-  --tw-shadow-colored: 0 8px 24px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -4653,6 +4678,12 @@ select {
 
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -5073,10 +5104,6 @@ body {
   background-color: var(--color-surface-tint);
 }
 
-.hover\:bg-surface-variant:hover {
-  background-color: var(--color-surface-variant);
-}
-
 .hover\:font-bold:hover {
   font-weight: 700;
 }
@@ -5282,6 +5309,10 @@ body {
   background-color: rgb(0 0 0 / 0.2);
 }
 
+.dark\:bg-black\/50:is(.dark *) {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
 .dark\:from-black\/90:is(.dark *) {
   --tw-gradient-from: rgb(0 0 0 / 0.9) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
@@ -5325,10 +5356,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .md\:bottom-12 {
-    bottom: 3rem;
-  }
-
   .md\:bottom-28 {
     bottom: 7rem;
   }
@@ -5493,6 +5520,10 @@ body {
     padding-top: 10rem;
   }
 
+  .md\:pt-\[160px\] {
+    padding-top: 160px;
+  }
+
   .md\:text-left {
     text-align: left;
   }
@@ -5554,6 +5585,10 @@ body {
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:text-\[80px\] {
