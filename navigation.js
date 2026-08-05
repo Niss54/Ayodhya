@@ -80,15 +80,6 @@
       .site-lang-toggle:hover, .site-theme-toggle:hover { background: rgba(255, 102, 17, 0.15); border-color: rgba(165, 61, 0, .5); }
       html[data-theme="dark"] .site-theme-toggle, html[data-theme="dark"] .site-lang-toggle { background: #34251d; color: #ffd8b8; border-color: #785237; }
       html[data-theme="dark"] .site-lang-toggle:hover, html[data-theme="dark"] .site-theme-toggle:hover { background: #4a3328; border-color: #9a6a4d; }
-      .site-bottom-nav { position: fixed; z-index: 100; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: space-around; width: min(680px, calc(100% - 24px)); padding: 9px 12px; border: 1px solid rgba(165, 61, 0, .18); border-radius: 18px; background: rgba(255, 250, 245, .94); box-shadow: 0 -4px 24px rgba(70, 37, 15, .14); backdrop-filter: blur(14px); }
-      .site-bottom-nav a { display: flex; min-width: 68px; flex-direction: column; align-items: center; gap: 3px; color: #6f5b4c; font: 600 11px Inter, sans-serif; text-decoration: none; }
-      .site-bottom-nav a:hover, .site-bottom-nav a[aria-current="page"] { color: #ad4700; }
-      .site-bottom-nav .material-symbols-outlined { font-size: 23px; }
-      body { padding-bottom: 96px !important; }
-      html[data-theme="dark"] .site-bottom-nav { background: rgba(41, 29, 22, .95); border-color: #785237; box-shadow: 0 -4px 24px rgba(0, 0, 0, .35); }
-      html[data-theme="dark"] .site-bottom-nav a { color: #dec8b7; }
-      html[data-theme="dark"] .site-bottom-nav a:hover, html[data-theme="dark"] .site-bottom-nav a[aria-current="page"] { color: #ffb982; }
-      @media (max-width: 640px) { .site-controls { gap: 4px; margin-left: 6px; } .site-language-select { width: 48px; padding: 0 5px; } .site-bottom-nav { bottom: 6px; width: calc(100% - 12px); border-radius: 14px; } .site-bottom-nav a { min-width: 46px; font-size: 10px; } }
     `;
     document.head.appendChild(style);
 
@@ -121,22 +112,7 @@
 
 
 
-    const activeRoute = window.location.pathname;
-    const bottomNav = document.createElement('nav');
-    bottomNav.className = 'site-bottom-nav';
-    bottomNav.setAttribute('aria-label', 'Primary navigation');
-    bottomNav.innerHTML = `
-      <a href="${routes.home}" data-route="${routes.home}"><span class="material-symbols-outlined">home</span><span data-nav-label="home">Home</span></a>
-      <a href="${routes.packages}" data-route="${routes.packages}"><span class="material-symbols-outlined">map</span><span data-nav-label="tours">Tours</span></a>
-      <a href="${routes.guides}" data-route="${routes.guides}"><span class="material-symbols-outlined">person_pin_circle</span><span data-nav-label="guides">Guides</span></a>
-      <a href="${routes.hotels}" data-route="${routes.hotels}"><span class="material-symbols-outlined">hotel</span><span data-nav-label="rooms">Rooms</span></a>
-      <a href="${routes.contact}" data-route="${routes.contact}"><span class="material-symbols-outlined">chat</span><span data-nav-label="contact">Contact</span></a>`;
-    bottomNav.querySelectorAll('a').forEach((link) => {
-      if (link.dataset.route === activeRoute) link.setAttribute('aria-current', 'page');
-    });
-    document.body.appendChild(bottomNav);
-
-    const textFor = (element) => (element.textContent || '').replace(/\\s+/g, ' ').trim().toLowerCase();
+    const textFor = (element) => (element.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
     const routeFor = (element) => {
       const text = textFor(element);
       if (/book|plan your visit|reserve|select bed|select room/.test(text)) return routes.contact;
