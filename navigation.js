@@ -156,12 +156,12 @@
     const bottomNav = document.createElement('nav');
     bottomNav.className = 'site-bottom-nav';
     bottomNav.setAttribute('aria-label', 'Primary navigation');
-    bottomNav.innerHTML = \`
-      <a href="\${routes.home}" data-route="\${routes.home}"><span class="material-symbols-outlined">home</span><span data-nav-label="home">Home</span></a>
-      <a href="\${routes.packages}" data-route="\${routes.packages}"><span class="material-symbols-outlined">map</span><span data-nav-label="tours">Tours</span></a>
-      <a href="\${routes.guides}" data-route="\${routes.guides}"><span class="material-symbols-outlined">person_pin_circle</span><span data-nav-label="guides">Guides</span></a>
-      <a href="\${routes.hotels}" data-route="\${routes.hotels}"><span class="material-symbols-outlined">hotel</span><span data-nav-label="rooms">Rooms</span></a>
-      <a href="\${routes.contact}" data-route="\${routes.contact}"><span class="material-symbols-outlined">chat</span><span data-nav-label="contact">Contact</span></a>\`;
+    bottomNav.innerHTML = `
+      <a href="${routes.home}" data-route="${routes.home}"><span class="material-symbols-outlined">home</span><span data-nav-label="home">Home</span></a>
+      <a href="${routes.packages}" data-route="${routes.packages}"><span class="material-symbols-outlined">map</span><span data-nav-label="tours">Tours</span></a>
+      <a href="${routes.guides}" data-route="${routes.guides}"><span class="material-symbols-outlined">person_pin_circle</span><span data-nav-label="guides">Guides</span></a>
+      <a href="${routes.hotels}" data-route="${routes.hotels}"><span class="material-symbols-outlined">hotel</span><span data-nav-label="rooms">Rooms</span></a>
+      <a href="${routes.contact}" data-route="${routes.contact}"><span class="material-symbols-outlined">chat</span><span data-nav-label="contact">Contact</span></a>`;
     bottomNav.querySelectorAll('a').forEach((link) => {
       if (link.dataset.route === activeRoute) link.setAttribute('aria-current', 'page');
     });

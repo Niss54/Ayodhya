@@ -26,12 +26,12 @@
     <link href="/dist/styles.css?v=1785855545623" rel="stylesheet">
     <style>
         /* Fade up observer class */
-        .fade-up {
+        . {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .fade-up.in-view {
+        ..in-view {
             opacity: 1;
             transform: translateY(0);
         }
@@ -90,7 +90,7 @@
 </header>
 
 <main class="w-full">
-    <section class="relative w-full min-h-[100vh] flex flex-col items-center justify-center px-4 pt-32 overflow-hidden fade-up text-center">
+    <section class="relative w-full min-h-[100vh] flex flex-col items-center justify-center px-4 pt-32 overflow-hidden text-center">
         <!-- Background decorative elements -->
         <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10 z-0 flex items-center justify-center">
             <span class="material-symbols-outlined text-[300px] text-primary/30">explore_off</span>
@@ -123,7 +123,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-up').forEach(el => {
+        document.querySelectorAll('.').forEach(el => {
             observer.observe(el);
         });
     });

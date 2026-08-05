@@ -10,7 +10,7 @@ const dictionary = {
     "Plan Your Visit": "योजना बनाएं",
     
     // Home Hero
-    "Journey to the Eternal City of Lord Ram": "भगवान राम की शाश्वत नगरी की यात्रा",
+    "Ayodhya": "???????",
     "Walk the sacred paths of devotion, explore centuries of heritage, and enjoy thoughtfully curated pilgrimages with premium hospitality. Let every visit become a cherished spiritual memory.": "भक्ति के पवित्र पथों पर चलें, सदियों की विरासत का अन्वेषण करें, और प्रीमियम आतिथ्य के साथ सोच-समझकर तैयार की गई तीर्थयात्राओं का आनंद लें। हर यात्रा को एक अनमोल आध्यात्मिक स्मृति बनने दें।",
     "Book Darshan": "दर्शन बुक करें",
     
@@ -143,3 +143,4 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => window.setLanguage('hi'), 50);
     }
 });
+

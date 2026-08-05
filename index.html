@@ -89,7 +89,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <!-- Tailwind CSS -->
-<link href="/dist/styles.css?v=1785855545670" rel="stylesheet">
+<link href="/dist/styles.css?v=1785869082692" rel="stylesheet">
 <style>
         /* Custom Scrollbar for Horizontal Scrollers */
         .hide-scroll::-webkit-scrollbar {
@@ -131,13 +131,13 @@
         }
         
         /* Fade up observer class */
-        .fade-up {
+        . {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         
-        .fade-up.in-view {
+        ..in-view {
             opacity: 1;
             transform: translateY(0);
         }
@@ -270,18 +270,19 @@
 </header>
 <main class="w-full">
 <!-- Hero Section -->
-<section class="relative w-full min-h-[100vh] flex flex-col items-center justify-center px-margin-mobile pt-32 overflow-hidden fade-up">
+<section class="relative w-full min-h-[100vh] flex flex-col items-center justify-center px-margin-mobile pt-32 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img class="hero-img-light w-full h-full object-cover opacity-65" src="/public/light-hero.webp" fetchpriority="high" width="1920" height="1080" alt="Ayodhya Ram Mandir in daylight - bright golden temple with serene sky"/>
-<img class="hero-img-dark w-full h-full object-cover opacity-65" src="/public/dark-hero.webp" fetchpriority="high" width="1920" height="1080" alt="Ayodhya Ram Mandir at night - illuminated temple with dramatic night sky"/>
+<img class="hero-img-light w-full h-full object-cover opacity-100" src="/public/light-hero.webp" fetchpriority="high" width="1920" height="1080" alt="Ayodhya Ram Mandir in daylight - bright golden temple with serene sky"/>
+<img class="hero-img-dark w-full h-full object-cover opacity-100" src="/public/dark-hero.webp" fetchpriority="high" width="1920" height="1080" alt="Ayodhya Ram Mandir at night - illuminated temple with dramatic night sky"/>
 <!-- Gradient overlay for text readability -->
-<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 dark:from-black/80 dark:via-black/40 to-transparent"></div>
-</div>
-<div class="relative z-10 flex flex-col items-start text-left gap-6 w-full max-w-container-max mx-auto mt-auto mb-[8vh] px-6 md:px-8">
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface dark:text-white font-bold drop-shadow-2xl max-w-3xl leading-tight" style=" letter-spacing: -0.02em;">Journey to the Eternal City of Lord Ram</h1>
-<p class="font-body-lg md:text-[20px] text-on-surface-variant dark:text-surface-variant drop-shadow-lg max-w-2xl leading-relaxed">
-    Walk the sacred paths of devotion, explore centuries of heritage, and enjoy thoughtfully curated pilgrimages with premium hospitality. Let every visit become a cherished spiritual memory.
-</p>
+    <!-- ALWAYS use a dark gradient overlay to ensure white text is highly visible -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent dark:from-black/90 dark:via-black/40"></div>
+  </div>
+  <div class="relative z-10 flex flex-col items-start text-left gap-6 w-full max-w-[1100px] mx-auto mt-auto mb-[8vh] px-6 md:px-8">
+    <h1 class="text-5xl md:text-7xl lg:text-[80px] text-[#FF9B54] dark:text-white font-extrabold drop-shadow-2xl max-w-3xl leading-[1.1]" style="letter-spacing: -0.02em; text-shadow: 0 4px 12px rgba(0,0,0,0.8);">Ayodhya</h1>
+    <p class="font-body-lg md:text-[20px] text-white font-medium drop-shadow-xl max-w-2xl leading-relaxed" style="text-shadow: 0 2px 8px rgba(0,0,0,0.9); z-index: 20; position: relative;">
+        Walk the sacred paths of devotion, explore centuries of heritage, and enjoy thoughtfully curated pilgrimages with premium hospitality. Let every visit become a cherished spiritual memory.
+    </p>
 <a href="https://wa.me/919793434313?text=Jai%20Shree%20Ram!%20I%20would%20like%20to%20book%20a%20darshan.%20%2F%20%E0%A4%9C%E0%A4%AF%20%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%B0%E0%A4%BE%E0%A4%AE!%20%E0%A4%AE%E0%A5%88%E0%A4%82%20%E0%A4%A6%E0%A4%B0%E0%A5%8D%E0%A4%B6%E0%A4%A8%20%E0%A4%AC%E0%A5%81%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE%20%E0%A4%B9%E0%A5%82%E0%A4%81%E0%A5%A4" target="_blank" class="mt-4 bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps text-label-caps hover:shadow-[0_8px_20px_rgba(255,102,17,0.3)] transition-all shimmer-bg inline-block">Book Darshan</a>
 </div>
 <!-- Stats Row -->
@@ -305,13 +306,13 @@
 </div>
 </section>
 
-<section class="w-full max-w-[1280px] mx-auto py-12 px-margin-mobile flex flex-col gap-4 fade-up">
+<section class="w-full max-w-[1280px] mx-auto py-12 px-margin-mobile flex flex-col gap-4">
   <h2 class="font-headline-md text-headline-md text-on-surface text-center">Best Ayodhya Tour Package & Taxi Service | Ram Mandir Darshan</h2>
   <p class="font-body-md text-body-md text-on-surface-variant max-w-4xl mx-auto text-center leading-relaxed">Welcome to <strong>Mahakaal Tours & Travels</strong> — Ayodhya's most trusted travel agency offering complete tour packages, reliable taxi service, and VIP Ram Mandir darshan experiences. Located near the iconic Ram Mandir in Ayodhya, Uttar Pradesh, we specialize in curated spiritual journeys that combine devotion with comfort. Our services include affordable cab booking with clean AC vehicles like Swift Dzire and Ertiga, expert local tour guides fluent in Hindi and English, comfortable hotel bookings from budget to luxury near Ram Mandir, and a safe girls hostel for female pilgrims and students. Whether you're planning a sacred pilgrimage to Ram Janmabhoomi, a heritage walk through Hanuman Garhi and Kanak Bhawan, or an outstation trip to Varanasi and Prayagraj — Mahakaal Tours ensures a seamless, memorable experience. Our 24/7 customer support and WhatsApp booking at <a href="tel:+919793434313" class="text-primary font-semibold">+91-9793434313</a> makes planning your Ayodhya visit effortless. Join 10,000+ happy pilgrims who trust Mahakaal Tours for their spiritual journey.</p>
 </section>
 
 <!-- Tour Packages Carousel -->
-<section class="w-full max-w-[1280px] mx-auto py-12 px-margin-mobile flex flex-col gap-6 fade-up">
+<section class="w-full max-w-[1280px] mx-auto py-12 px-margin-mobile flex flex-col gap-6">
 <div class="flex flex-col items-center text-center gap-3 mb-4">
 <h2 class="font-headline-md text-headline-md text-primary font-bold">Divine Packages</h2>
 <a class="font-label-caps text-label-caps text-secondary flex items-center gap-1 hover:text-primary transition-colors" href="/ayodhya-tour-packages/">See All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
@@ -363,7 +364,7 @@
 </div>
 </section>
 
-<section class="w-full max-w-[1280px] mx-auto py-12 px-margin-mobile flex flex-col gap-6 fade-up">
+<section class="w-full max-w-[1280px] mx-auto py-12 px-margin-mobile flex flex-col gap-6">
   <h2 class="font-headline-md text-headline-md text-primary font-bold text-center">Frequently Asked Questions</h2>
   <div class="max-w-3xl mx-auto flex flex-col gap-4">
     <details class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_4px_16px_rgba(255,102,17,0.06)] border-l-4 border-primary" open>
@@ -436,7 +437,7 @@
                 });
             }, { threshold: 0.1 });
 
-            document.querySelectorAll('.fade-up').forEach(el => {
+            document.querySelectorAll('.').forEach(el => {
                 observer.observe(el);
             });
         });
@@ -507,3 +508,12 @@ if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') 
 </script>
 
 </body></html>
+
+
+
+
+
+
+
+
+
