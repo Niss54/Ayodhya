@@ -117,38 +117,7 @@
       applyLanguage(newLang);
     };
 
-    const createControls = () => {
-      const controls = document.createElement('div');
-      controls.className = 'site-controls';
-      const currentLang = localStorage.getItem('ayodhya-language') || 'en';
-      const langLabel = currentLang === 'hi' ? 'EN' : 'HI';
-      const langAriaLabel = currentLang === 'hi' ? 'Switch to English' : 'हिंदी में पढ़ें';
-      controls.innerHTML = '<button class="site-theme-toggle" type="button" aria-label="Switch to dark mode">\u263e</button><button class="site-lang-toggle" type="button" aria-label="' + langAriaLabel + '">' + langLabel + '</button>';
-      controls.querySelector('.site-theme-toggle').addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
-      controls.querySelector('.site-lang-toggle').addEventListener('click', () => toggleBlogLanguage());
-      return controls;
-    };
-
-    const isTopBar = (element) => {
-      const classes = element.className || '';
-      return typeof classes === 'string' && /(fixed|sticky)/.test(classes) && !/bottom-0|bottom-\d/.test(classes);
-    };
-
-    document.querySelectorAll('header, nav').forEach((element) => {
-      if (isTopBar(element)) {
-        const controls = createControls();
-        const planBtn = Array.from(element.querySelectorAll('a, button')).find(el => el.textContent.includes('Plan Your Visit') || el.textContent.includes('Book'));
-        
-        if (planBtn) {
-          planBtn.parentNode.insertBefore(controls, planBtn);
-          controls.style.display = 'inline-flex';
-          controls.style.alignItems = 'center';
-          controls.style.marginRight = '8px';
-        } else {
-          element.appendChild(controls);
-        }
-      }
-    });
+    
 
 
 
@@ -215,3 +184,4 @@
   });
 
 })();
+
